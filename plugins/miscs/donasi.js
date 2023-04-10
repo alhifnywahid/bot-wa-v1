@@ -5,7 +5,7 @@ neoxr.create(async (m, {
       try {
         client.sendReact(m.chat, '❤️', m.key)
    client.sendMessageModify(m.chat, donasi(), m, {
-   title: ('Instagram : @luthfijoestars'),
+   title: ('Instagram : @megachanbot'),
    ads: false,
    largeThumb: true,
    thumbnail: await Func.fetchBuffer('https://telegra.ph/file/e1e4f12fb71c5e36444e4.jpg'),
@@ -28,9 +28,9 @@ berarti untuk kami,
 
 Metode Pembayaran:
 
-➠ DANA/OVO/GOPAY: 081310994964
-➠ Pulsa: 087740938972
-➠ Saweria: https://saweria.co/zephyrboy
+➠ DANA/OVO/GOPAY: 085655207366
+➠ Pulsa: 087877120437
+➠ Saweria: https://saweria.co/megachanbot
 
 
 Terimakasih, dengan berkah mu owner dapat meningkatkan performa ${global.botname}`
