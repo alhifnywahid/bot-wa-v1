@@ -7,7 +7,7 @@ neoxr.create(async (m, {
    Func
 }) => {
    try {
-      if (command == 'ai' || command == 'brainly') {
+      if (command == 'brainly') {
          if (!text) return client.reply(m.chat, Func.example(prefix, command, 'how to create api'), m)
          client.sendReact(m.chat, '🕒', m.key)
          const configuration = new Configuration({
@@ -44,7 +44,7 @@ neoxr.create(async (m, {
       client.reply(m.chat, global.status.fail, m)
    }
 }, {
-   usage: ['ai', 'brainly', 'ai-img'],
+   usage: ['brainly', 'ai-img'],
    use: 'query',
    category: 'features',
    limit: true
