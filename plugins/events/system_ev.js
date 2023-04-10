@@ -63,7 +63,7 @@ neoxr.create(async (m, {
          .setProgressBar('#FFFFFF', 'COLOR')
          .setUsername(m.pushName)
          .setDiscriminator(Func.randomInt(1000, 9999))  
-      if (levelAwal != levelAkhir) client.sendFile(m.chat, await rank.build(), 'level.jpg', `乂  *L E V E L - U P*\n\nFrom : [ *${levelAwal}* ] ➠ [ *${levelAkhir}* ]\n*Congratulations!*, you have leveled up 🎉🎉🎉`, m)
+      //if (levelAwal != levelAkhir) client.sendFile(m.chat, await rank.build(), 'level.jpg', `乂  *L E V E L - U P*\n\nFrom : [ *${levelAwal}* ] ➠ [ *${levelAkhir}* ]\n*Congratulations!*, you have leveled up 🎉🎉🎉`, m)
       
       // Anti Delete Personal Chat
       if (!isOwner && !m.isGroup && m.msg && m.msg.type == 0) {
