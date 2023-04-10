@@ -9,10 +9,10 @@ neoxr.create(async (m, {
 Dengan mendaftar menjadi user premium anda akan mendapatkan keuntungan sebagai berikut :
 
 1. Bisa menggunakan semua fitur
-2. mendapatkan unlimited limit
+2. mendapatkan 1500 limit & 500 limit Games
 3. jika bot mode grouponly user premium bisa memainkan di pesan pribadi
 
-Silahkan hubungi *.owner* untuk melakukan upgrade premium hanya dengan Rp. 10.000 per bulan
+Silahkan hubungi *.owner* untuk melakukan upgrade premium hanya dengan Rp. 5.000 per bulan
 
 Invite bot ke GC kalian ? ketik *.sewabot*`, m)
    } catch (e) {
