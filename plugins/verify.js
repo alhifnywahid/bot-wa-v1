@@ -8,7 +8,7 @@ neoxr.create(async (m, {
 }) => {
    try {
       if (global.db.users.find(v => v.jid == m.sender).verified) return client.reply(m.chat, Func.texted('bold', `✅ Your number already verified.`), m)
-      if (!args || !args[0]) return client.reply(m.chat, Func.example(prefix, command, 'neoxrbot@gmail.com'), m)
+      if (!args || !args[0]) return client.reply(m.chat, Func.example(prefix, command, 'megachan@gmail.com'), m)
       if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ig.test(args[0])) return client.reply(m.chat, Func.texted('bold', '🚩 Invalid email.'), m)
       let emails = global.db.users.filter(v => v.email).map(v => v.email)
       if (emails.includes(args[0])) return client.reply(m.chat, Func.texted('bold', '🚩 Email already registered.'), m)
