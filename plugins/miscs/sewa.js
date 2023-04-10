@@ -5,11 +5,11 @@ neoxr.create(async (m, {
       try {
         var p = `*❏ SEWABOT*
 
-Jika kamu ingin memasukkan bot ke grup kamu, kamu hanya perlu membayar 15k durasi 1 bulan.
+Jika kamu ingin memasukkan bot ke grup kamu, kamu hanya perlu membayar 5k durasi 1 bulan.
     
-Pembayaran via Gopay, DANA dan OVO.
+Pembayaran via GOPAY, DANA, SHOPEEPAY dan OVO.
 
-Untuk lebih lanjut silahkan chat ke https://wa.me/6281310994964 atau kamu bisa ketik *.owner*`
+Untuk lebih lanjut silahkan chat ke https://wa.me/6287877120437 atau kamu bisa ketik *.owner*`
    client.sendMessageModify(m.chat, p, m, {
    title: global.botname,
    ads: false,
