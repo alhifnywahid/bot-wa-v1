@@ -174,7 +174,7 @@ const connect = async () => {
    
    const ramCheck = setInterval(() => {
       var ramUsage = process.memoryUsage().rss
-      if (ramUsage >= 5000000000) { // 5 GB
+      if (ramUsage >= 700000000) { // 5 GB
          clearInterval(ramCheck)
          process.send('reset')
       }
@@ -183,7 +183,7 @@ const connect = async () => {
    setInterval(async () => {
       const tmpFiles = fs.readdirSync('./temp')
       if (tmpFiles.length > 0) tmpFiles.map(v => fs.unlinkSync('./temp/' + v))
-   }, 60 * 1000 * 5)
+   }, 5000)
    
    setInterval(async () => {
       if (global.db) await machine.save(global.db)
