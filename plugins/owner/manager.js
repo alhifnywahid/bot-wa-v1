@@ -26,21 +26,14 @@ neoxr.create(async (m, {
          })
          client.reply(m.chat, Func.texted('bold', `🚩 Successfully removing @${number} from owner list.`), m)
       } else if (command == '+prem') { // add premium
-          let data = global.db.users.find(v => v.jid == jid)
-          if (typeof data == 'undefined') return client.reply(m.chat, Func.texted('bold', `🚩 Can't find user data.`), m)
-          if (data.premium) {
-            data.limit += 1500
-            data.limitGame += 500
-            data.expired = data.expired * 2
-            client.reply(m.chat, Func.texted('bold', `🚩 @${jid.replace(/@.+/, '')} premium account has been extended.`), m)
-          } else {
-            data.limit += 1500
-            data.limitGame = 500
-            data.premium = true
-            data.expired = (new Date() * 1) + (86400000 * 30 * 2)
-            client.reply(m.chat, Func.texted('bold', `🚩 Successfully added @${jid.replace(/@.+/, '')} to premium user.`), m)
-          }
-        }
+         let data = global.db.users.find(v => v.jid == jid)
+         if (typeof data == 'undefined') return client.reply(m.chat, Func.texted('bold', `🚩 Can't find user data.`), m)
+         if (data.premium) return client.reply(m.chat, Func.texted('bold', `🚩 @${jid.replace(/@.+/, '')} has become registered as a premium account.`), m)
+         data.limit += 1500
+         data.limitGame = 500
+         data.premium = true
+         data.expired = (new Date() * 1) + (86400000 * 30)
+         client.reply(m.chat, Func.texted('bold', `🚩 Successfully added @${jid.replace(/@.+/, '')} to premium user.`), m)
       } else if (command == '-prem') { // remove premium
          let data = global.db.users.find(v => v.jid == jid)
          if (typeof data == 'undefined') return client.reply(m.chat, Func.texted('bold', `🚩 Can't find user data.`), m)
