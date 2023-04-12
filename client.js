@@ -178,12 +178,12 @@ const connect = async () => {
          clearInterval(ramCheck)
          process.send('reset')
       }
-   }, 60 * 1000)
+   }, 5000)
    
    setInterval(async () => {
       const tmpFiles = fs.readdirSync('./temp')
       if (tmpFiles.length > 0) tmpFiles.map(v => fs.unlinkSync('./temp/' + v))
-   }, 5000)
+   }, 60 * 1000 * 5)
    
    setInterval(async () => {
       if (global.db) await machine.save(global.db)
