@@ -30,7 +30,7 @@ neoxr.create(async (m, {
           if (typeof data == 'undefined') return client.reply(m.chat, Func.texted('bold', `🚩 Can't find user data.`), m)
           if (data.premium) {
             data.limit += 1500
-            data.limitGame = 500
+            data.limitGame += 500
             data.expired = data.expired * 2
             client.reply(m.chat, Func.texted('bold', `🚩 @${jid.replace(/@.+/, '')} premium account has been extended.`), m)
           } else {
