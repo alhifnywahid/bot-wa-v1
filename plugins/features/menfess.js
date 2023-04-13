@@ -44,5 +44,7 @@ neoxr.create(async (m, {
    hidden: ['menfes', 'confes', 'confess'],
    use: '628xxx | ayu | i love u',
    category: 'features',
-   private: true
+   private: true,
+   premium: true,
+   limit: true
 }, __filename)
