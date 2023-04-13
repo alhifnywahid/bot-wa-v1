@@ -140,5 +140,6 @@ neoxr.create(async (m, {
    hidden: ['convert', 'yt', 'yta', 'ytv'],
    use: 'link',
    category: 'features',
+   premium: true,
    limit: true
 }, __filename)
