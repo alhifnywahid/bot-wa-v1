@@ -35,5 +35,6 @@ neoxr.create(async (m, {
    hidden: ['tr'],
    use: 'iso text',
    category: 'features',
+   premium: true,
    limit: true
 }, __filename)
