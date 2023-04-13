@@ -48,5 +48,6 @@ neoxr.create(async (m, {
    usage: ['toimg', 'flip', 'flop'],
    use: 'reply sticker',
    category: 'features',
+   premium: true,
    limit: true
 }, __filename)
