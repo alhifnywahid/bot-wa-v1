@@ -178,5 +178,6 @@ neoxr.create(async (m, {
    hidden: ['yts', 'ytfind', 'getapk', 'getapkmod'],
    use: 'query',
    category: 'features',
+   premium: true,
    limit: true
 }, __filename)
