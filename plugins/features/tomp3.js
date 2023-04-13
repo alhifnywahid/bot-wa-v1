@@ -63,5 +63,6 @@ neoxr.create(async (m, {
    hidden: ['toaudio'],
    use: 'reply media',
    category: 'features',
+   premium: true,
    limit: true
 }, __filename)
