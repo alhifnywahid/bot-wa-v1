@@ -61,5 +61,6 @@ neoxr.create(async (m, {
    usage: ['spotify'],
    use: 'query / link',
    category: 'features',
-   limit: true,
+   premium: true,
+   limit: true
 }, __filename)
