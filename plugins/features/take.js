@@ -27,5 +27,6 @@ neoxr.create(async (m, {
    hidden: ['wm'],
    use: 'packname | author',
    category: 'features',
+   premium: true,
    limit: true
 }, __filename)
