@@ -28,6 +28,7 @@ neoxr.create(async (m, {
    usage: ['nulis'],
    use: 'text',
    category: 'features',
+   premium: true,
    limit: true,
    restrict: true
 }, __filename)
