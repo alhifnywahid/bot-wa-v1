@@ -44,5 +44,6 @@ neoxr.create(async (m, {
    hidden: ['lagu', 'song', 'music'],
    use: 'query',
    category: 'features',
+   premium: true,
    limit: true
 }, __filename)
