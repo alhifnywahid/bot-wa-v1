@@ -48,7 +48,7 @@ return `
 
 Nomer Bot | wa.me/6285936173955
 Group Official | https://chat.whatsapp.com/JpO7oMMgK975NMhJA7Qrnj
-Group Khusus Game | https://chat.whatsapp.com/BIUUT84JTEoAxUb3fEVGog
+Group Khusus Game | https://chat.whatsapp.com/HfbVjUdEIjY0Wg7FsYZIoj
 `
 }
 
