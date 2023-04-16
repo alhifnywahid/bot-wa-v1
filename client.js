@@ -122,8 +122,8 @@ const connect = async () => {
    client.ev.on('group-participants.update', async (room) => {
       let meta = await (await client.groupMetadata(room.id))
       let member = room.participants[0]
-      let text_welcome = `Thanks +tag for joining into +grup group.`
-      let text_left = `Good bye +tag :)`
+      let text_welcome = `Terima kasih +tag telah bergabung ke grup +grup\n\nketik *.rules* untuk melihat aturan dan cara menggunakan bot.`
+      let text_left = `Selamat tinggal +tag 👋`
       let groupSet = global.db.groups.find(v => v.jid == room.id)
       try {
          pic = await Func.fetchBuffer(await client.profilePictureUrl(member, 'image'))
