@@ -29,7 +29,7 @@ berarti untuk kami,
 Metode Pembayaran:
 
 ➠ DANA/OVO/GOPAY: 085655207366
-➠ Pulsa: 087877120437
+➠ Pulsa: 085936173955
 ➠ Saweria: https://saweria.co/megachanbot
 
 
