@@ -46,7 +46,7 @@ return `
 • Menggunakan kata toxic yang dilist = +1 warning
 5 Warning = Kick
 
-Nomer Bot | wa.me/6285936173955
+Nomer Bot | wa.me/6287877120437
 Group Official | https://chat.whatsapp.com/JpO7oMMgK975NMhJA7Qrnj
 Group Khusus Game | https://chat.whatsapp.com/HfbVjUdEIjY0Wg7FsYZIoj
 `
