@@ -41,6 +41,6 @@ neoxr.create(async (m, {
       client.reply(m.chat, Func.jsonFormat(e), m)
    }
 }, {
-   usage: ['buy', 'buyall'],
+   usage: ['buylimit', 'buyall', 'buylimitgame'],
    category: 'user info'
 }, __filename)
