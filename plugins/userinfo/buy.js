@@ -17,7 +17,7 @@ neoxr.create(async (m, {
          users.point -= price * parseInt(amount)
          users.limitGame += parseInt(amount)
          return client.reply(m.chat, `✅ You have purchased *${amount}* limit with *${Func.h2k(price * parseInt(amount))}* points.`, m)
-      } else if (command == 'buylimit') {
+      } else if (command == 'buylimitgame') {
          if (isNaN(args[0])) return client.reply(m.chat, Func.example(prefix, command, '1'), m)
          if (args[0] < 1) return client.reply(m.chat, Func.example(prefix, command, '1'), m)
          if (users.point >= price * parseInt(args[0])) {
@@ -26,7 +26,7 @@ neoxr.create(async (m, {
             users.limit += parseInt(args[0])
             return client.reply(m.chat, `✅ You have purchased *${args[0]}* limit with *${Func.h2k(price * args[0])}* points.`, m)
          }
-      } else if (command == 'buylimitgame') {
+      } else if (command == 'buylimit') {
          if (isNaN(args[0])) return client.reply(m.chat, Func.example(prefix, command, '1'), m)
          if (args[0] < 1) return client.reply(m.chat, Func.example(prefix, command, '1'), m)
          if (users.point >= price * parseInt(args[0])) {
