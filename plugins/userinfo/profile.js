@@ -47,5 +47,6 @@ neoxr.create(async (m, {
    }
 }, {
    usage: ['profile'],
+   use: 'mention or @tag',
    category: 'user info'
 }, __filename)
