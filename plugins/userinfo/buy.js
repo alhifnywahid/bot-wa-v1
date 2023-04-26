@@ -43,5 +43,6 @@ neoxr.create(async (m, {
    }
 }, {
    usage: ['buylimit', 'buyall', 'buylimitgame'],
+   use: 'amount',
    category: 'user info'
 }, __filename)
