@@ -23,7 +23,7 @@ neoxr.create(async (m, {
          if (users.point >= price * parseInt(args[0])) {
             if ((users.limitGame + parseInt(args[0])) >= maximum) return client.reply(m.chat, Func.texted('bold', `🚩 Limit amount you buy exceeds maximum limit.`), m)
             users.point -= price * parseInt(args[0])
-            users.limit += parseInt(args[0])
+            users.limitGame += parseInt(args[0])
             return client.reply(m.chat, `✅ You have purchased *${args[0]}* limit with *${Func.h2k(price * args[0])}* points.`, m)
          }
       } else if (command == 'buylimit') {
