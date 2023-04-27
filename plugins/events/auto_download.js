@@ -20,7 +20,7 @@ neoxr.create(async (m, {
       const regex10 = /^(?:https?:\/\/)?(?:podcasts\.)?(?:google\.com\/)(?:feed\/)(?:\S+)?$/;
       const extract = body ? Func.generateLink(body) : null
       if (!extract) return
-      if (body && !m.isGroup && users && !users.banned && !users.verified && setting.verify) return client.reply(m.chat, `🚩 Your number has not been verified, verify by sending *${prefixes[0]}reg <email>*`, m)
+      if (body && !m.isGroup && users && !users.banned && !users.verified && setting.verify) return client.reply(m.chat, `🚩 Nomor Anda belum diverifikasi, Silagkan verifikasi dahulu dengan mengirim perintah\n*${prefixes[0]}reg youremai@gmail.com*`, m)
       const links1 = extract.filter(v => Func.igFixed(v).match(regex1))
       const links2 = extract.filter(v => v.match(regex2))
       const links3 = extract.filter(v => v.match(regex3))
@@ -37,7 +37,7 @@ neoxr.create(async (m, {
          if (users.limit >= limit) {
             users.limit -= limit
             // m.reply(`🪫 Remaining Limits : *[ ${users.limit} / ${users.premium ? 1000 : global.limit} ]*`)
-         } else return client.reply(m.chat, Func.texted('bold', `🚩 Your limit is not enough to use this feature.`), m)
+         } else return client.reply(m.chat, Func.texted('bold', `🚩 Limit Anda tidak cukup untuk menggunakan fitur ini.`), m)
       }
       client.sendReact(m.chat, '🕒', m.key)
 
