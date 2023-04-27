@@ -8,11 +8,7 @@ neoxr.create(async (m, {
 }) => {
    try {
       if (command == 'brainly') {
-         if (!text) return client.reply(m.chat, `乂  *F I T U R  B R A I N L Y
-         adalah fitur untuk tanya jawab, dimana user akan bertanya pada bot dan bot akan menjawab apa yang telah di tanyakan oleh user, bot hanya bisa menjawab pertanyaan text jadi jika user bertanya dengan gambar BOT otomatis tidak mengerti
-         
-         Cara penggunaan fitur :
-         ${Func.example(prefix, command, 'tutorial membuat nasi goreng yang enak')}`, m)
+         if (!text) return client.reply(m.chat, `${Func.texted('bold', '乂 Fitur  Brainly : ')}\nadalah fitur tanya jawab, dimana pengguna akan bertanya pada bot dan bot akan menjawab apa yang telah di tanyakan oleh user, bot hanya bisa menjawab pertanyaan text, jadi jika user bertanya dengan gambar BOT otomatis tidak mengerti\n\n${Func.texted('bold', 'Cara Menggunakan fitur :')}\n${Func.example(prefix, 'Perintah', 'isi pertanyaanmu')}\n${Func.example(prefix, command, 'Siapa penemu pesawat?')}`, m)
          client.sendReact(m.chat, '🕒', m.key)
          const configuration = new Configuration({
             apiKey: process.env.OPENAI_API_KEY
