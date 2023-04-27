@@ -22,6 +22,26 @@ neoxr.create(async (m, {
             rowId: `${prefix}modify ${jid} 30D`,
             description: ``
          }, {
+            title: 'STAY 2 MONTHS',
+            rowId: `${prefix}modify ${jid} 60D`,
+            description: ``
+         }, {
+            title: 'STAY 3 MONTHS',
+            rowId: `${prefix}modify ${jid} 90D`,
+            description: ``
+         }, {
+            title: 'STAY 6 MONTHS',
+            rowId: `${prefix}modify ${jid} 180D`,
+            description: ``
+         }, {
+            title: 'STAY 9 MONTHS',
+            rowId: `${prefix}modify ${jid} 270D`,
+            description: ``
+         }, {
+            title: 'STAY 12 MONTHS',
+            rowId: `${prefix}modify ${jid} 365D`,
+            description: ``
+         }, {
             title: 'STAY FOREVER',
             rowId: `${prefix}modify ${jid} 1`,
             description: ``
@@ -70,7 +90,7 @@ neoxr.create(async (m, {
          let adminList = await client.groupAdmin(jid)
          let admin = adminList.includes((client.user.id.split`:` [0]) + '@s.whatsapp.net')
          let now = new Date() * 1
-         if (/1D|7D|30D/.test(dial)) {
+         if (/1D|7D|30D|60D|90D|180D|270D|365D/.test(dial)) {
             let day = 86400000 * parseInt(dial.replace('D', ''))
             global.db.groups.find(v => v.jid == jid).expired = now + day
             global.db.groups.find(v => v.jid == jid).stay = false
