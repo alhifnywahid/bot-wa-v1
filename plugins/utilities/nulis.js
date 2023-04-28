@@ -27,7 +27,7 @@ neoxr.create(async (m, {
 }, {
    usage: ['nulis'],
    use: 'text',
-   category: 'features',
+   category: 'utilities',
    premium: true,
    limit: true,
    restrict: true
