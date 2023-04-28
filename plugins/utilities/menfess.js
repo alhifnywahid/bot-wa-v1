@@ -43,7 +43,7 @@ neoxr.create(async (m, {
    usage: ['menfess'],
    hidden: ['menfes', 'confes', 'confess'],
    use: '628xxx | ayu | i love u',
-   category: 'features',
+   category: 'utilities',
    private: true,
    premium: true,
    limit: true
