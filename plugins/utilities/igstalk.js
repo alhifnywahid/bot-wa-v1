@@ -30,7 +30,7 @@ neoxr.create(async (m, {
 }, {
    usage: ['igstalk'],
    use: 'username',
-   category: 'features',
+   category: 'utilities',
    premium: true,
    limit: true
 }, __filename)
