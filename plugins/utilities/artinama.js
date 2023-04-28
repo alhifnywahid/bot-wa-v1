@@ -2,7 +2,8 @@ neoxr.create(async (m, {
    client,
    text,
    prefix,
-   command
+   command,
+   Func
    }) => {
       try {
          if (!text) return client.reply(m.chat, Func.example(prefix, command, 'megawati'), m)
