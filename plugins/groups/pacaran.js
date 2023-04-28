@@ -89,7 +89,7 @@ neoxr.create(async (m, {
 }, {
    usage: ['pacaran', 'jadian', 'tembak', 'terima', 'tolak', 'putus', 'batal'],
    use: '@tag',
-   category: 'group',
+   category: 'relationship',
    group: true
 }, __filename)
 
