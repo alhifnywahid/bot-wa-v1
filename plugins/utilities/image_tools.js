@@ -176,7 +176,7 @@ neoxr.create(async (m, {
 }, {
    usage: ['face', 'snobg', 'nobg', 'smeme', 'ocr', 'remini'],
    use: 'reply photo',
-   category: 'features',
+   category: 'utilities',
    premium: true,
    limit: true
 }, __filename)
