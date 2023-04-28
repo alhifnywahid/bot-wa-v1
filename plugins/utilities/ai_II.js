@@ -22,6 +22,6 @@ neoxr.create(async (m, {
 }, {
    usage: ['ai'],
    use: 'query',
-   category: 'features',
+   category: 'utilities',
    limit: true
 }, __filename)
