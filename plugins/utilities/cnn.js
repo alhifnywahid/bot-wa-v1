@@ -38,9 +38,9 @@ neoxr.create(async (m, {
          client.reply(m.chat, Func.jsonFormat(e), m)
       }
 }, {
-   usage: ['calc'],
-   hidden: ['c'],
-   use: 'expression',
+   usage: ['cnn'],
+   hidden: ['cnnget'],
    category: 'utilities',
+   limit: true,
    error: false
 }, __filename)
