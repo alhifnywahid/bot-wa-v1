@@ -177,7 +177,7 @@ neoxr.create(async (m, {
    usage: ['chord', 'lirik', 'pinterest', 'google', 'goimg', 'ytsearch', 'apk', 'apkmod'],
    hidden: ['yts', 'ytfind', 'getapk', 'getapkmod'],
    use: 'query',
-   category: 'features',
+   category: 'utilities',
    premium: true,
    limit: true
 }, __filename)
