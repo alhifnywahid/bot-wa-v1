@@ -20,7 +20,6 @@ neoxr.create(async (m, {
    hidden: ['nama'],
    use: 'name',
    category: 'utilities',
-   error: false,
    restrict: true,
    premium: true,
    limit: true
