@@ -2,7 +2,8 @@ neoxr.create(async (m, {
    client,
    text,
    prefix,
-   command
+   command,
+   Func
    }) => {
       try {
          let vocal = command.charAt(1)
