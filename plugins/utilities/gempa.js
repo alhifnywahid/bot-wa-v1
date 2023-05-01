@@ -1,5 +1,6 @@
 neoxr.create(async (m, {
    client,
+   Func
    }) => {
       try {
          client.sendReact(m.chat, '🕒', m.key)
