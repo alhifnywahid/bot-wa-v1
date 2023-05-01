@@ -2,7 +2,8 @@ neoxr.create(async (m, {
    client,
    text,
    prefix,
-   command
+   command,
+   Func
    }) => {
       if (!text) return client.reply(m.chat, Func.example(prefix, command, '2 * 5'), m)
       let val = text
