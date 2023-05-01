@@ -2,7 +2,8 @@ neoxr.create(async (m, {
    client,
    args,
    prefix,
-   command
+   command,
+   Func
    }) => {
       try {
          if (command == 'cnn') {
