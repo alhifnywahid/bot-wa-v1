@@ -2,6 +2,7 @@ neoxr.create(async (m, {
    client,
    args,
    prefix,
+   command,
    isBotAdmin,
    participants,
    Func
