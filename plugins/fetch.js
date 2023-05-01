@@ -79,6 +79,6 @@ neoxr.create(async (m, {
    usage: ['fetch', 'tiktok', 'tikmp3', 'tikwm'],
    hidden: ['get', 'tt'],
    use: 'link',
-   category: 'features',
+   category: 'utilities',
    limit: true
 }, __filename)
