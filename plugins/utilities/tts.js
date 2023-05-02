@@ -9,7 +9,7 @@ neoxr.create(async (m, {
    command,
    Func
    }) => {
-      if (!text) return client.reply(m.chat, Func.example(prefix, command, 'id i love you'), m)
+      if (!text) return client.reply(m.chat, Func.example(prefix, command, 'id i love him'), m)
       if (text && m.quoted && m.quoted.text) {
          let lang = text.slice(0, 2)
          try {
