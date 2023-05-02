@@ -19,6 +19,6 @@ neoxr.create(async (m, {
    }
 }, {
    usage: ['join'],
-   hidden: ['group link'],
+   use: ['group link'],
    category: 'owner'
 }, __filename)
