@@ -1,3 +1,4 @@
+const { decode } = require('html-entities')
 neoxr.create(async (m, {
    client,
    args,
