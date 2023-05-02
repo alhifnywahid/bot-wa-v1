@@ -1,7 +1,7 @@
-const gtts = require('node-gtts')
-const { tmpdir } = require('os')
-const fs = require('fs')
-const path = require('path')
+import gtts from 'node-gtts'
+import { tmpdir } from 'os'
+import { unlinkSync } from 'fs'
+import { join } from 'path'
 neoxr.create(async (m, {
    client,
    text,
@@ -15,10 +15,10 @@ neoxr.create(async (m, {
          try {
             let data = m.quoted.text
             let tts = gtts(lang)
-            let filePath = path.join(tmpdir(), Func.filename('mp3'))
+            let filePath = join(tmpdir(), Func.filename('mp3'))
             tts.save(filePath, data, async () => {
                client.sendFile(m.chat, await Func.fetchBuffer(filePath), 'audio.mp3', '', m)
-               fs.unlinkSync(filePath)
+               unlinkSync(filePath)
             })
          } catch {
             return client.reply(m.chat, Func.texted('bold', `🚩 Language code not supported.`), m)
@@ -28,10 +28,10 @@ neoxr.create(async (m, {
          try {
             let data = text.substring(2).trim()
             let tts = gtts(lang)
-            let filePath = path.join(tmpdir(), Func.filename('mp3'))
+            let filePath = join(tmpdir(), Func.filename('mp3'))
             tts.save(filePath, data, async () => {
                client.sendFile(m.chat, await Func.fetchBuffer(filePath), 'audio.mp3', '', m)
-               fs.unlinkSync(filePath)
+               unlinkSync(filePath)
             })
          } catch (e) {
             console.log(e)
