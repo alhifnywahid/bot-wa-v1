@@ -1,3 +1,7 @@
+const gtts = require('node-gtts')
+const { tmpdir } = require('os')
+const fs = require('fs')
+const path = require('path')
 neoxr.create(async (m, {
    client,
    text,
