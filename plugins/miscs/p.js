@@ -3,7 +3,7 @@ neoxr.create(async (m, {
    Func
 }) => {
   try {
-    await client.sendSticker(m.chat, await Func.fetchBuffer('./media/sticker/false.webp'), m, {
+    await client.sendSticker(m.chat, await Func.fetchBuffer('./media/sticker/p.webp'), m, {
       packname: global.db.setting.sk_pack,
       author: global.db.setting.sk_author
    })
