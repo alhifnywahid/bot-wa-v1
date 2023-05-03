@@ -5,6 +5,7 @@ const path = require('path')
 neoxr.create(async (m, {
    client,
    prefix,
+   text,
    command,
    Func
    }) => {
