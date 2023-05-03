@@ -311,7 +311,7 @@ module.exports = async (client, m) => {
       }
    } catch (e) {
       console.log(e)
-      if (!m.fromMe) return m.reply(Func.jsonFormat(new Error('neoxr-bot encountered an error :' + e)))
+      if (!m.fromMe) return m.reply(Func.jsonFormat(new Error('zephyr-bot encountered an error :' + e)))
    }
 }
 
