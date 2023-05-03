@@ -10,7 +10,7 @@ neoxr.create(async (m, {
       return client.reply(m.chat, Func.example(prefix, command, 'siapa presiden indonesia sekarang?'), m)
     }
     const configuration = new Configuration({
-      apiKey: "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"
+      apiKey: process.env.OPENAI_API_KEY
     });
     const openai = new OpenAIApi(configuration);
       client.sendReact(m.chat, '🕒', m.key)
