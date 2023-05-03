@@ -198,7 +198,7 @@ module.exports = async (client, m) => {
                users.email = ''
                client.updateBlockStatus(m.sender, 'block')
             })
-            if (!['verify', 'exec'].includes(name) && m.isGroup && users && !users.banned && !users.verified && setting.verify) client.reply(m.sender, `🚩 Nomor kamu belum terverifikasi, Silahlan verifikasi dulu dengan mengirimkan perintah *${prefixes[0]}reg <youremail@gmail.com>*`, m)
+            if (!['verify', 'exec'].includes(name) && m.isGroup && users && !users.banned && !users.verified && setting.verify) client.reply(m.sender, `🚩 Harap verifikasi nomor Anda terlebih dahulu sebelum dapat menggunakan layanan kami dengan mengirimkan perintah *${prefixes[0]}reg emailkamu@gmail.com*`, m)
             if (!['verify', 'exec'].includes(name) && !m.isGroup && users && !users.banned && !users.verified && setting.verify) return client.sendMessageModify(m.chat, teks, m, {
                largeThumb: true,
                thumbnail: await Func.fetchBuffer('https://telegra.ph/file/31601aee3fdf941bebbc4.jpg')
