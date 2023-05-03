@@ -49,7 +49,7 @@ const connect = async () => {
          }
          return message
       },
-      browser: ['Luthfi Joestars - Kenshin', 'safari', '1.0.0'],
+      browser: ['GOPRET - ZephyrBot', 'safari', '1.0.0'],
       auth: state,
       getMessage: async (key) => {
          if (store) {
