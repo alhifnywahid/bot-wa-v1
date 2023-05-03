@@ -3,6 +3,7 @@ neoxr.create(async (m, {
    text,
    prefix,
    command,
+   Scraper,
    Func
 }) => {
   let setting = global.db.setting
