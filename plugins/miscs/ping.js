@@ -25,6 +25,6 @@ neoxr.create(async (m, {
    }
 }, {
    usage: ['ping'],
-   hidden: ['p'],
+   hidden: ['pigggg'],
    category: 'miscs'
 }, __filename)
