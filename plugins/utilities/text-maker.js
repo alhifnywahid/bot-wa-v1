@@ -36,10 +36,10 @@ neoxr.create(async (m, {
      return client.reply(m.chat, global.status.error, m)
   }
 }, {
-  usage: ['textmaker'],
-  hidden: ['blackpink', 'blood', 'breakwall', 'glow', 'joker', 'magma', 'matrix', 'multicolor', 'neon', 'papercut', 'slice'],
+  usage: ['blackpink', 'blood', 'breakwall', 'glow', 'joker', 'magma', 'matrix', 'multicolor', 'neon', 'papercut', 'slice'],
+  hidden: ['textmaker'],
   use: 'text',
-  category: 'utilities',
+  category: 'text maker',
   error: false,
   premium: true,
   limit: true
