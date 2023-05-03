@@ -30,11 +30,11 @@ function start() {
 	})
 }
 
-CFonts.say('Kenshin', {
+CFonts.say('Zephyr Bot', {
    font: 'tiny',
    align: 'center',
    colors: ['system']
-}), CFonts.say('instagram : @luthfijoestars', {
+}), CFonts.say('recode : @gopret', {
    colors: ['system'],
    font: 'console',
    align: 'center'
