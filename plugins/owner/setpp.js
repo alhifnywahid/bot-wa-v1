@@ -12,7 +12,7 @@ neoxr.create(async (m, {
      if (/image\/(jpe?g|png)/.test(mime)) {
         client.sendReact(m.chat, '🕒', m.key)
         const buffer = await q.download()
-        const json = await scrap.uploadImageV2(buffer)
+        const json = await Scraper.uploadImageV2(buffer)
         if (!json.status) return m.reply(Func.jsonFormat(json))
         await client.updateProfilePicture(client.user.id, {
            url: json.data.url
