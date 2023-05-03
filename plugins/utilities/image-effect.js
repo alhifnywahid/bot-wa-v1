@@ -1,10 +1,8 @@
 neoxr.create(async (m, {
    client,
    args,
-   text,
    prefix,
    command,
-   Scraper,
    Func
 }) => {
   try {
@@ -37,7 +35,7 @@ neoxr.create(async (m, {
      }
   } catch (e) {
      console.log(e)
-     return client.reply(m.chat, global.status.error, m)
+     return client.reply(m.chat, e, m)
   }
 }, {
   usage: ['effect'],
