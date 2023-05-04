@@ -1,4 +1,5 @@
 neoxr.create(async (m, {
+   client,
    args,
    prefix,
    command,
