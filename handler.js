@@ -45,7 +45,7 @@ module.exports = async (client, m) => {
       }
       if (!users) return require('./lib/system/schema')(m)
       if (m.isGroup && !groupSet.stay && (new Date * 1) >= groupSet.expired && groupSet.expired != 0) {
-         return client.reply(m.chat, Func.texted('italic', '🚩 Bot time has expired and will leave from this group, thank you.', null, {
+         return client.reply(m.chat, Func.texted('italic', '🚩 Waktu aktif bot di grup ini telah habis dan bot akan keluar dari grup ini. Terima kasih.', null, {
             mentions: participants.map(v => v.id)
          })).then(async () => {
             groupSet.expired = 0
@@ -53,7 +53,7 @@ module.exports = async (client, m) => {
          })
       }
       if (users && (new Date * 1) >= users.expired && users.expired != 0) {
-         return client.reply(users.jid, Func.texted('italic', '🚩 Your premium package has expired, thank you for buying and using our service.')).then(async () => {
+         return client.reply(users.jid, Func.texted('italic', '🚩 Paket premium Anda telah kedaluwarsa. Kami sangat berterima kasih atas pembelian dan penggunaan layanan kami.')).then(async () => {
             users.premium = false
             users.expired = 0
             users.limit = global.limit
@@ -150,7 +150,7 @@ module.exports = async (client, m) => {
       const prefixes = global.db.setting.multiprefix ? global.db.setting.prefix : [global.db.setting.onlyprefix]
       const matcher = Func.matcher(command, commands).filter(v => v.accuracy >= 60)
       if (prefix && !commands.includes(command) && matcher.length > 0 && !setting.self) {
-         if (!m.isGroup || (m.isGroup && !groupSet.mute)) return client.reply(m.chat, `🚩 Command you are using is wrong, try the following recommendations :\n\n${matcher.map(v => '➠ *' + (prefix ? prefix : '') + v.string + '* (' + v.accuracy + '%)').join('\n')}`, m)
+         if (!m.isGroup || (m.isGroup && !groupSet.mute)) return client.reply(m.chat, `🚩 Maaf, perintah yang Anda masukkan salah. Berikut adalah rekomendasi perintah yang dapat Anda gunakan. :\n\n${matcher.map(v => '➠ *' + (prefix ? prefix : '') + v.string + '* (' + v.accuracy + '%)').join('\n')}`, m)
       }
       if (body && prefix && commands.includes(command) || body && !prefix && commands.includes(command) && setting.noprefix || body && !prefix && commands.includes(command) && global.evaluate_chars.includes(command)) {
          if (setting.error.includes(command) && (!setting.self || m.isGroup && groupSet.mute)) return client.reply(m.chat, Func.texted('bold', `🚩 Command _${(prefix ? prefix : '') + command}_ disabled.`), m)
@@ -182,7 +182,7 @@ module.exports = async (client, m) => {
             if (!turn && !turn_hidden) return
             if (setting.self && !isOwner && !m.fromMe) return
             if (!m.isGroup && !['owner'].includes(name) && chats && !isPrem && !users.banned && new Date() * 1 - chats.lastchat < global.timer) return
-            if (!m.isGroup && !['owner', 'confess', 'scan_jadibot', 'verify'].includes(name) && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `🚩 Using bot in private chat only for premium user, upgrade to premium plan only Rp. 14,999,- to get 1K limits for 1 month.\n\nIf you want to buy contact *${prefixes[0]}owner*`, m, {
+            if (!m.isGroup && !['owner', 'confess', 'scan_jadibot', 'verify'].includes(name) && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `🚩 Penggunaan bot dalam obrolan pribadi hanya tersedia untuk pengguna premium.\n\nSilakan gunakan perintah .premium untuk melihat paket premium yang tersedia.`, m, {
                largeThumb: true,
                thumbnail: await Func.fetchBuffer('https://telegra.ph/file/0b32e0a0bb3b81fef9838.jpg'),
                url: setting.link
@@ -206,24 +206,24 @@ module.exports = async (client, m) => {
             if (m.isGroup && !['activation', 'groupinfo', 'exec', 'makeAdmin'].includes(name) && groupSet.mute) return
             if (m.isGroup && !isOwner && /chat.whatsapp.com/i.test(text)) return client.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
             if (cmd.owner && !isOwner) return client.reply(m.chat, global.status.owner, m)
-            if (cmd.restrict && !isOwner && text && new RegExp('\\b' + global.db.setting.toxic.join('\\b|\\b') + '\\b').test(text.toLowerCase())) return client.reply(m.chat, `🚩 You violated the *Terms & Conditions* of using bots by using blacklisted keywords, as a penalty for your violation being blocked and banned. To unblock and unbanned you have to pay *Rp. 10,000,-*`, m).then(() => {
+            if (cmd.restrict && !isOwner && text && new RegExp('\\b' + global.db.setting.toxic.join('\\b|\\b') + '\\b').test(text.toLowerCase())) return client.reply(m.chat, `🚩 Mohon maaf, namun kami menemukan pelanggaran *Syarat & Ketentuan* penggunaan bot pada penggunaan kata kunci yang masuk daftar hitam. Oleh karena itu, sebagai sanksi atas pelanggaran tersebut, akun Anda akan diblokir dan dilarang untuk digunakan. Untuk membuka blokir dan menghilangkan sanksi, kami mengharapkan pembayaran sebesar Rp. 5.000,-. Terima kasih.`, m).then(() => {
                users.banned = true
                client.updateBlockStatus(m.sender, 'block')
             })
             if (cmd.premium && !isPrem) return client.reply(m.chat, global.status.premium, m)
-            if (cmd.limit && !cmd.game && users.limit < 1) return client.reply(m.chat, `🚩 Your bot usage has reached the limit will be reset at 00.00.\n\nTo get more limits, upgrade to a premium plan send *${prefixes[0]}premium*`, m).then(() => users.premium = false)
+            if (cmd.limit && !cmd.game && users.limit < 1) return client.reply(m.chat, `🚩 Mohon maaf, penggunaan bot Anda telah mencapai batas maksimum harian dan akan diatur ulang pada pukul 00.00. WIB\n\n Untuk memperoleh batas yang lebih tinggi, Anda dapat meningkatkan ke paket premium dengan mengirimkan perintah *${prefixes[0]}premium*`, m).then(() => users.premium = false)
             if (cmd.limit && !cmd.game && users.limit > 0) {
                let limit = cmd.limit.constructor.name == 'Boolean' ? 1 : cmd.limit
                if (users.limit >= limit) {
                   users.limit -= limit
-               } else return client.reply(m.chat, Func.texted('bold', `🚩 Your limit is not enough to use this feature.`), m)
+               } else return client.reply(m.chat, Func.texted('bold', `🚩 Maaf, batas permainan Anda tidak mencukupi untuk menggunakan fitur ini. Silakan tunggu hingga batas permainan Anda diatur ulang atau upgrade paket ke premium untuk mendapatkan limit yang lebih banyak.`), m)
             }
-            if (cmd.limit && cmd.game && users.limitGame < 1) return client.reply(m.chat, `🚩 Your game limit has reached the limit will be reset at 00.00 WIB`, m)
+            if (cmd.limit && cmd.game && users.limitGame < 1) return client.reply(m.chat, `🚩 Maaf, Limit Game telah tercapai dan akan diatur ulang pada pukul 00.00 WIB.\n\n Untuk memperoleh batas yang lebih tinggi, Anda dapat meningkatkan ke paket premium dengan mengirimkan perintah .premium`, m)
             if (cmd.limit && cmd.game && users.limitGame > 0) {
                let limit = cmd.limit.constructor.name == 'Boolean' ? 1 : cmd.limit
                if (users.limitGame >= limit) {
                   users.limitGame -= limit
-               } else return client.reply(m.chat, Func.texted('bold', `🚩 Your game limit is not enough to use this feature.`), m)
+               } else return client.reply(m.chat, Func.texted('bold', `🚩 Maaf, batas permainan Anda tidak mencukupi untuk menggunakan fitur ini. Silakan tunggu hingga batas permainan Anda diatur ulang atau upgrade paket ke premium untuk mendapatkan limit yang lebih banyak.`), m)
             }
             if (cmd.group && !m.isGroup) {
                client.reply(m.chat, global.status.group, m)
@@ -282,11 +282,11 @@ module.exports = async (client, m) => {
             if (event.botAdmin && !isBotAdmin) return
             if (event.admin && !isAdmin) return
             if (event.private && m.isGroup) return
-            if (event.limit && !event.game && users.limit < 1 && body && Func.generateLink(body).some(v => Func.socmed(v))) return client.reply(m.chat, `🚩 Your bot usage has reached the limit will be reset at 00.00 WIB.\n\nTo get more limits, upgrade to a premium plan send *${prefixes[0]}premium*`, m).then(() => {
+            if (event.limit && !event.game && users.limit < 1 && body && Func.generateLink(body).some(v => Func.socmed(v))) return client.reply(m.chat, `🚩 Mohon maaf, penggunaan bot Anda telah mencapai batas maksimum harian dan akan diatur ulang pada pukul 00.00. WIB\n\n Untuk memperoleh batas yang lebih tinggi, Anda dapat meningkatkan ke paket premium dengan mengirimkan perintah *${prefixes[0]}premium*`, m).then(() => {
                users.premium = false
                users.expired = 0
             })
-            if (event.limit && event.game && users.limitGame < 1 && body) return client.reply(m.chat, `🚩 Your limit game has reached the limit will be reset at 00.00 WIB.`, m)
+            if (event.limit && event.game && users.limitGame < 1 && body) return client.reply(m.chat, `🚩 Maaf, Limit Game telah tercapai dan akan diatur ulang pada pukul 00.00 WIB.\n\n Untuk memperoleh batas yang lebih tinggi, Anda dapat meningkatkan ke paket premium dengan mengirimkan perintah .premium`, m)
             if (event.download && (!setting.autodownload || (body && global.evaluate_chars.some(v => body.startsWith(v))))) return
             if (event.game && !setting.games) return
             if (event.game && Func.level(users.point)[0] >= 50) return
