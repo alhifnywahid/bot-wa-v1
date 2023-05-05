@@ -7,11 +7,11 @@ neoxr.create(async (m, {
    Func
 }) => {
    try {
-      if (global.db.users.find(v => v.jid == m.sender).verified) return client.reply(m.chat, Func.texted('bold', `✅ Your number already verified.`), m)
+      if (global.db.users.find(v => v.jid == m.sender).verified) return client.reply(m.chat, Func.texted('bold', `✅ Nomor Anda telah diverifikasi sebelumnya.`), m)
       if (!args || !args[0]) return client.reply(m.chat, Func.example(prefix, command, 'megachan@gmail.com'), m)
       if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ig.test(args[0])) return client.reply(m.chat, Func.texted('bold', '🚩 Mohon maaf, email yang Anda kirimkan tidak valid. Mohon kirim ulang dengan perintah .reg emailkamu.@gmail.com'), m)
       let emails = global.db.users.filter(v => v.email).map(v => v.email)
-      if (emails.includes(args[0])) return client.reply(m.chat, Func.texted('bold', '🚩 Email already registered.'), m)
+      if (emails.includes(args[0])) return client.reply(m.chat, Func.texted('bold', '🚩 Email tersebut sudah terdaftar.'), m)
       client.sendReact(m.chat, '🕒', m.key)
       let code = `${Func.randomInt(100, 900)}-${Func.randomInt(100, 900)}`
       let users = global.db.users.find(v => v.jid == m.sender)
@@ -27,16 +27,16 @@ neoxr.create(async (m, {
       })
       const mailOptions = {
          from: {
-            name: 'Megachan Bot',
+            name: 'Zephyr Bot',
             address: process.env.USER_EMAIL
          },
          to: args[0],
          subject: 'Email Verification',
-         html: `<div style="padding:20px;border:1px dashed #222;font-size:15px"><tt>Hi <b>${m.pushName} 😘</b><br><br>Confirm your email to be able to use Megachan Bot. Send this code to the bot and it will expire in 3 minutes.<br><center><h1>${code}</h1></center>Or copy and paste the URL below into your browser : <a href="https://wa.me/6287877120437?text=${code}">https://wa.me/6287877120437?text=${code}</a><br><br><hr style="border:0px; border-top:1px dashed #222"><br>Regards, <b>Megachan Bot</b></tt></div>`
+         html: `<div style="padding:20px;border:1px dashed #222;font-size:15px"><tt>Hi <b>${m.pushName} 😘</b><br><br>Confirm your email to be able to use Zephyr Bot. Send this code to the bot and it will expire in 3 minutes.<br><center><h1>${code}</h1></center>Or copy and paste the URL below into your browser : <a href="https://wa.me/6287877120437?text=${code}">https://wa.me/6287877120437?text=${code}</a><br><br><hr style="border:0px; border-top:1px dashed #222"><br>Regards, <b>GOPRET</b></tt></div>`
       }
       transport.sendMail(mailOptions, function(err, data) {
          if (err) return m.reply(Func.texted('bold', `❌ SMTP Error !!`))
-         return client.reply(m.chat, Func.texted('bold', `✅ Check your mailbox to get a verification code.`), m)
+         return client.reply(m.chat, Func.texted('bold', `✅ Kode verifikasi telah saya kirim. Mohon periksa kotak masuk Gmail Anda untuk melihat kode verifikasi tersebut.`), m)
       })
    } catch (e) {
       client.reply(m.chat, Func.jsonFormat(e), m)
