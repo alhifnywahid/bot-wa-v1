@@ -170,13 +170,13 @@ neoxr.create(async (m, {
         //return client.reply(m.chat, Func.texted('bold', teks), m)
       }
     } else if (command == 'tebakskip') {
-      const playtebaktebakan = [{ buttonId: `${prefix}tebaktebakan`, buttonText: { displayText: 'MAIN LAGI' }, type: 1 }]
-      teks = `🚩 Sesi permainan tebaklirik berhasil di hapus.`
+      const playSusunKata = [{ buttonId: `${prefix}susunkata`, buttonText: { displayText: 'MAIN LAGI' }, type: 1 }]
+      teks = `🚩 Sesi permainan susun kata berhasil di hapus.`
       client.tebaktebakan = client.tebaktebakan ? client.tebaktebakan : {}
       if ((id in client.tebaktebakan)) {
         delete client.tebaktebakan[id]
         //! SEND MESSAGE WITH BUTTONS
-        return client.sendButtonText(m.chat, teks, `${global.botname}`, playtebaktebakan)
+        return client.sendButtonText(m.chat, teks, `${global.botname}`, playSusunKata)
         //! SEND MESSAGE WITH TEKS 
         //return client.reply(m.chat, Func.texted('bold', teks), m)
       }
