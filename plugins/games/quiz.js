@@ -4,6 +4,26 @@ neoxr.create(async (m, {
   Func
 }) => {
   try {
+    const buttons = [{
+      buttonId: `${prefix}quizclue`,
+      buttonText: {
+        displayText: 'CLUE'
+      },
+      type: 1
+    }, {
+      buttonId: `${prefix}quizskip`,
+      buttonText: {
+        displayText: 'SKIP'
+      },
+      type: 1
+    }]
+    const playAgain = [{
+      buttonId: `${prefix}quiz`,
+      buttonText: {
+        displayText: 'MAIN LAGI'
+      },
+      type: 1
+    }]
      if (global.db.users.find(v => v.jid == m.sender).point < 10000) return client.reply(m.chat, Func.texted('bold', `🚩 Untuk bermain game ini kamu harus mempunyai minimal 10K point.`), m)
      client.quiz = client.quiz ? client.quiz : {}
      let id = m.chat,
@@ -14,19 +34,6 @@ neoxr.create(async (m, {
      teks += `${json.pertanyaan.replace(json.pertanyaan.charAt(0), json.pertanyaan.charAt(0).toUpperCase())} ??\n\n`
      teks += `Timeout : [ *${((timeout / 1000) / 60)} menit* ]\n`
      teks += `Terdapat *${json.jawaban.length}* jawaban, reply pesan ini untuk menjawab, kirim *${prefix}quizclue* untuk bantuan dan *${prefix}quizskip* untuk menghapus sesi.`
-     const buttons = [{
-       buttonId: `${prefix}quizclue`,
-       buttonText: {
-         displayText: 'CLUE'
-       },
-       type: 1
-     }, {
-       buttonId: `${prefix}quizskip`,
-       buttonText: {
-         displayText: 'SKIP'
-       },
-       type: 1
-     }]
      client.quiz[id] = [
         //! SEND MESSAGE WITH TEKS 
         //client.reply(m.chat, teks, m),
@@ -40,7 +47,10 @@ neoxr.create(async (m, {
               let teks = `乂  *J A W A B A N*\n\n`
               teks += isJson.jawaban.map((v, i) => (i + 1) + '. ```' + Func.ucword(v) + '```').join('\n')
               teks += `\n\n*Waktu habis!* berikut adalah jawabannya.`
-              client.reply(m.chat, teks, client.quiz[id][0])
+              //! SEND MESSAGE WITH TEKS 
+              //client.reply(m.chat, teks, client.quiz[id][0])
+              //! SEND MESSAGE WITH BUTTONS
+              client.sendButtonText(m.chat, teks, client.quiz[id][0], playAgain)
            }
            delete client.quiz[id]
         }, timeout),
