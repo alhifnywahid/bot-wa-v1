@@ -46,7 +46,7 @@ neoxr.create(async (m, {
           let isJson = JSON.parse(JSON.stringify(client.quiz[id][1]))
           let teks = `乂  *J A W A B A N*\n\n`
           teks += isJson.jawaban.map((v, i) => (i + 1) + '. ```' + Func.ucword(v) + '```').join('\n')
-          teks += `\n\n*Waktu habis!* berikut adalah jawabannya: ${client.quiz[id][0]}`
+          teks += `\n\n*Waktu habis!* berikut adalah jawabannya.`
           //! SEND MESSAGE WITH TEKS 
           //client.reply(m.chat, teks, client.quiz[id][0])
           //! SEND MESSAGE WITH BUTTONS
