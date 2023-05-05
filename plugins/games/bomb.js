@@ -1,5 +1,6 @@
 neoxr.create(async (m, {
   client,
+  prefix,
   Func
 }) => {
   try {
