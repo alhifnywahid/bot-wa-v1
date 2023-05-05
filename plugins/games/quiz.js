@@ -50,7 +50,8 @@ neoxr.create(async (m, {
           //! SEND MESSAGE WITH TEKS 
           //client.reply(m.chat, teks, client.quiz[id][0])
           //! SEND MESSAGE WITH BUTTONS
-          client.sendButtonText(m.chat, teks, `${global.botname}`, playAgain);
+          client.sendButtonText(m.chat, `${teks}\n\n${client.quiz[id][1].jawaban.join(', ')}\n\nWaktu habis! Berikut adalah jawabannya.`, global.botname, playAgain)
+
         }
         delete client.quiz[id]
       }, timeout),
