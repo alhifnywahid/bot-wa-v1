@@ -43,5 +43,5 @@ neoxr.create(async (m, {
    use: 'iso text',
    category: 'utilities',
    error: false,
-   limit: true
+   limit: 3
 }, __filename)
