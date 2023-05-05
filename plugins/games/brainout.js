@@ -45,7 +45,7 @@ neoxr.create(async (m, {
            //! SEND MESSAGE WITH TEKS 
            //client.reply(m.chat, teks, client.brainout[id][0])
            //! SEND MESSAGE WITH BUTTONS
-           client.sendButtonText(m.chat, `${teks} ${client.brainout[id][0]}`, `${global.botname}`, playAgain)
+           client.sendButtonText(m.chat, `${teks}`, `${global.botname}`, playAgain)
            delete client.brainout[id]
         }, timeout)
      ]
