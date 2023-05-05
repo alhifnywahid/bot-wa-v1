@@ -6,13 +6,13 @@ neoxr.create(async (m, {
   const buttons = [{
     buttonId: `.owner`,
     buttonText: {
-      displayText: `${Func.texted('bold', 'owner')}`
+      displayText: 'OWNER'
     },
     type: 1
   }, {
     buttonId: `.sewa`,
     buttonText: {
-      displayText: `${Func.texted('bold', 'sewa bot')}`
+      displayText: 'SEWA BOT'
     },
     type: 1
   }]
