@@ -35,8 +35,8 @@ neoxr.create(async (m, {
         await client.reply(m.chat, teks, m),
         array,
         setTimeout(() => {
-          teks = `*Waktu habis!*, Bom ada di kotak angka ${v.number}.`
            let v = array.find(v => v.emot == '💥')
+           teks = `*Waktu habis!*, Bom ada di kotak angka ${v.number}.`
            //! SEND MESSAGE WITH TEKS 
            if (client.bomb[id]) client.reply(m.chat, teks, client.bomb[id][0])
            //! SEND MESSAGE WITH BUTTONS
