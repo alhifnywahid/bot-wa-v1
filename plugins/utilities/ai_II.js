@@ -33,5 +33,6 @@ neoxr.create(async (m, {
    usage: ['ai'],
    use: 'query',
    category: 'utilities',
+   private: true
    limit: 2
 }, __filename)
