@@ -63,7 +63,7 @@ neoxr.create(async (m, {
          .setProgressBar('#FFFFFF', 'COLOR')
          .setUsername(m.pushName)
          .setDiscriminator(Func.randomInt(1000, 9999))  
-      //if (levelAwal != levelAkhir) client.sendFile(m.chat, await rank.build(), 'level.jpg', `乂  *L E V E L - U P*\n\nFrom : [ *${levelAwal}* ] ➠ [ *${levelAkhir}* ]\n*Congratulations!*, you have leveled up 🎉🎉🎉`, m)
+      if (levelAwal != levelAkhir) client.sendFile(m.chat, await rank.build(), 'level.jpg', `乂  *L E V E L - U P*\n\nFrom : [ *${levelAwal}* ] ➠ [ *${levelAkhir}* ]\n*Congratulations!*, you have leveled up 🎉🎉🎉`, m)
       
       // Anti Delete Personal Chat
       if (!isOwner && !m.isGroup && m.msg && m.msg.type == 0) {
@@ -79,7 +79,7 @@ neoxr.create(async (m, {
       if (!isOwner && m.isGroup && groupSet.antidelete && m.msg && m.msg.type == 0) {
          const copy = await client.deleteObj(m, client)
          if (copy) {
-            client.reply(m.chat, `📡 *Sistem mendeteksi bahwa Anda telah menghapus pesan.*`, m).then(async () => {
+            client.reply(m.chat, `📡 *System detects you deleted the message.*`, m).then(async () => {
                await client.copyNForward(m.chat, copy)
             })
          }
@@ -114,14 +114,14 @@ neoxr.create(async (m, {
 
       // Email Verification
       if (!m.isGroup && body && body.match(/\d{3}-\d{3}/) && !users.verified) {
-         if (users.jid == m.sender && users.code != body.trim()) return client.reply(m.chat, Func.texted('bold', '🚩 Maaf, kode verifikasi yang telah kamu kirimkan salah.'), m)
-         if (new Date - users.codeExpire > 180000) return client.reply(m.chat, Func.texted('bold', '🚩 Mohon maaf, kode verifikasi yang kamu berikan telah kedaluwarsa.'), m).then(() => {
+         if (users.jid == m.sender && users.code != body.trim()) return client.reply(m.chat, Func.texted('bold', '🚩 Your verification code is wrong.'), m)
+         if (new Date - users.codeExpire > 180000) return client.reply(m.chat, Func.texted('bold', '🚩 Your verification code has expired.'), m).then(() => {
             users.codeExpire = 0
             users.code = ''
             users.email = ''
             users.attempt = 0
          })
-         return client.reply(m.chat, Func.texted('bold', `✅ Nomor Anda telah berhasil diverifikasi.`), m).then(() => {
+         return client.reply(m.chat, Func.texted('bold', `✅ Your number has been successfully verified.`), m).then(() => {
             users.codeExpire = 0
             users.code = ''
             users.attempt = 0
@@ -138,13 +138,13 @@ neoxr.create(async (m, {
             if (spam >= 2) setTimeout(() => {
                users.spam = 0
             }, global.cooldown * 1000)
-            if (users.banTimes >= 3) return client.reply(m.chat, `🚩 Akun Anda telah diban secara permanen setelah sebelumnya di-ban sementara sebanyak 3 kali.`, m).then(() => {
+            if (users.banTimes >= 3) return client.reply(m.chat, `🚩 You are permanently banned because you have been temporarily banned 3 times.`, m).then(() => {
                users.banned = true
                users.banTemp = 0
                users.banTimes = 0
             })
-            if (m.isGroup && spam == 4) return client.reply(m.chat, `🚩 Sistem mendeteksi Anda melakukan spam, mohon tunggu *${global.cooldown} detik*.`, m)
-            if (m.isGroup && spam >= 5) return client.reply(m.chat, `🚩 Anda telah diblokir sementara selama ${((global.timer / 1000) / 60)}  menit karena melakukan spam.`, m).then(() => {
+            if (m.isGroup && spam == 4) return client.reply(m.chat, `🚩 System detects you are spamming, please cooldown for *${global.cooldown} seconds*.`, m)
+            if (m.isGroup && spam >= 5) return client.reply(m.chat, `🚩 You were temporarily banned for ${((global.timer / 1000) / 60)} minutes cause you over spam.`, m).then(() => {
                users.banTemp = new Date() * 1
                users.banTimes += 1
                if (!isOwner && chats) {
@@ -155,8 +155,8 @@ neoxr.create(async (m, {
                   }
                }
             })
-            if (!m.isGroup && spam == 4) return client.reply(m.chat, `🚩 Sistem mendeteksi Anda melakukan spam, mohon tunggu *${global.cooldown} detik*.`, m)
-            if (!m.isGroup && spam >= 5) return client.reply(m.chat, `🚩 Anda telah diblokir sementara selama ${((global.timer / 1000) / 60)} menit karena melakukan spam.`, m).then(() => {
+            if (!m.isGroup && spam == 4) return client.reply(m.chat, `🚩 System detects you are spamming, please cooldown for *${global.cooldown} seconds*.`, m)
+            if (!m.isGroup && spam >= 5) return client.reply(m.chat, `🚩 You were temporarily banned for ${((global.timer / 1000) / 60)} minutes cause you over spam.`, m).then(() => {
                users.banTemp = new Date() * 1
                users.banTimes += 1
             })
