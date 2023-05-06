@@ -26,13 +26,12 @@ neoxr.create(async (m, {
           messages: [{role: "user", content: text}],
           });
  //! SEND MESSAGE WITH TEKS 
- //client.reply(m.chat, `${response.data.choices[0].message.content}`, m)
+ client.reply(m.chat, `${response.data.choices[0].message.content}`, m)
  //! SEND MESSAGE WITH BUTTONS
- client.sendButtonText(m.chat, response.data.choices[0].message.content, `${global.botname}`, arigato)
+ //client.sendButtonText(m.chat, response.data.choices[0].message.content, `${global.botname}`, arigato)
 }, {
    usage: ['ai'],
    use: 'query',
    category: 'utilities',
-   private: true,
    limit: 2
 }, __filename)
