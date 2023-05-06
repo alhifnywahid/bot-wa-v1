@@ -28,7 +28,7 @@ neoxr.create(async (m, {
  //! SEND MESSAGE WITH TEKS 
  //client.reply(m.chat, `${response.data.choices[0].message.content}`, m)
  //! SEND MESSAGE WITH BUTTONS
- client.sendButtonText(m.chat, response.data.choices[0].message.content, m, `${global.botname}`, arigato)
+ client.sendButtonText(m.chat, response.data.choices[0].message.content, `${global.botname}`, arigato [m])
 }, {
    usage: ['ai'],
    use: 'query',
