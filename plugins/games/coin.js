@@ -14,7 +14,7 @@ neoxr.create(async (m, {
       if (x == 'A' || x == 'B') {
          var type = Func.random(['A', 'B'])
          if (Func.ucword(args[0]) == type) {
-            let percent = Func.randomInt(5, 10)
+            let percent = Func.randomInt(1, 5)
             let reward = ((percent / 200) * users.point)
             users.point += reward
             let last = users.point
@@ -25,7 +25,7 @@ neoxr.create(async (m, {
             teks += `*NB : “tunggu ${global.cooldown} detik untuk perintah berikutnya.”*`
             client.reply(m.chat, teks, m)
          } else if (Func.ucword(args[0]) != type) {
-            let percent = Func.randomInt(5, 15)
+            let percent = Func.randomInt(1, 10)
             let reward = ((percent / 200) * users.point)
             users.point -= reward
             let last = users.point
