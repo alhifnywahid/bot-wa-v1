@@ -7,8 +7,8 @@ neoxr.create(async (m, {
    Func
 }) => {
    try {
-      let maximum = 100,
-         price = 10000
+      let maximum = 1000,
+         price = 50000
       if (users.limitGame >= maximum) return client.reply(m.chat, Func.texted('bold', `🚩 Sorry, you can't buy any more limits because you have reached maximum limit.`), m)
       if (command == 'buyall') {
          if (users.point < price) return client.reply(m.chat, Func.texted('bold', `🚩 You don't have enough points to buy limit.`), m)
