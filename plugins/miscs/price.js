@@ -29,10 +29,10 @@ neoxr.create(async (m, {
   Invite bot ke GC kalian ? ketik *.sewabot*`
   try {
     //! SEND MESSAGE WITH TEKS 
-     //client.reply(m.chat, `${teks}`, m)
+     client.reply(m.chat, `${teks}`, m)
 
     //! SEND MESSAGE WITH BUTTONS 
-    client.sendButtonText(m.chat, `${teks}`, `${global.botname}`, buttons)
+    //client.sendButtonText(m.chat, `${teks}`, `${global.botname}`, buttons)
   } catch (e) {
      client.reply(m.chat, Func.jsonFormat(e), m)
   }
