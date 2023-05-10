@@ -16,9 +16,9 @@ neoxr.create(async (m, {
      teks += `➠ Game Limit : *${Func.formatter(users.limitGame)}*`
      teks += `${!users.premium ? `\n\nUntuk mendapatkan lebih banyak limit, tingkatkan ke paket premium kirim *${prefix}premium*` : ''}`
      //! SEND MESSAGE WITH TEKS 
-     //client.reply(m.chat, teks, m)
+     client.reply(m.chat, teks, m)
      //! SEND MESSAGE WITH BUTTONS
-     client.sendButtonText(m.chat, teks, `${global.botname}`, buyPremium)
+     //client.sendButtonText(m.chat, teks, `${global.botname}`, buyPremium)
   } catch (e) {
      client.reply(m.chat, Func.jsonFormat(e), m)
   }
