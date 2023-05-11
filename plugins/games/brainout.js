@@ -35,17 +35,17 @@ neoxr.create(async (m, {
      teks += `Reply pesan ini untuk menjawab, kirim *${prefix}brainwhat* untuk bantuan dan *${prefix}brainskip* untuk menghapus sesi.`
      client.brainout[id] = [
         //! SEND MESSAGE WITH TEKS 
-        //await client.reply(m.chat, teks, m),
+        await client.reply(m.chat, teks, m),
         //! SEND MESSAGE WITH BUTTONS
-        await client.sendButtonText(m.chat, `${teks}`, `${global.botname}`, buttons),
+        //await client.sendButtonText(m.chat, `${teks}`, `${global.botname}`, buttons),
         json.data,
         setTimeout(() => {
            if (client.brainout[id]) 
            teks = `*Waktu habis!*\nJawaban : *${json.data.jawaban}*`
            //! SEND MESSAGE WITH TEKS 
-           //client.reply(m.chat, teks, client.brainout[id][0])
+           client.reply(m.chat, teks, client.brainout[id][0])
            //! SEND MESSAGE WITH BUTTONS
-           client.sendButtonText(m.chat, `${teks}`, `${global.botname}`, playAgain)
+           //client.sendButtonText(m.chat, `${teks}`, `${global.botname}`, playAgain)
            delete client.brainout[id]
         }, timeout)
      ]
