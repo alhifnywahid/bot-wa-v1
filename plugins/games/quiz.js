@@ -36,10 +36,10 @@ neoxr.create(async (m, {
     teks += `Terdapat *${json.jawaban.length}* jawaban, reply pesan ini untuk menjawab, kirim *${prefix}quizclue* untuk bantuan dan *${prefix}quizskip* untuk menghapus sesi.`
     client.quiz[id] = [
       //! SEND MESSAGE WITH TEKS 
-      //client.reply(m.chat, teks, m),
+      await client.reply(m.chat, teks, m),
 
       //! SEND MESSAGE WITH BUTTONS
-      await client.sendButtonText(m.chat, teks, `${global.botname}`, buttons),
+      //await client.sendButtonText(m.chat, teks, `${global.botname}`, buttons),
       json,
       setTimeout(() => {
         if (client.quiz[id]) {
@@ -48,9 +48,9 @@ neoxr.create(async (m, {
           teks += isJson.jawaban.map((v, i) => (i + 1) + '. ```' + Func.ucword(v) + '```').join('\n')
           teks += `\n\n*Waktu habis!* berikut adalah jawabannya.`
           //! SEND MESSAGE WITH TEKS 
-          //client.reply(m.chat, teks, client.quiz[id][0])
+          client.reply(m.chat, teks, client.quiz[id][0])
           //! SEND MESSAGE WITH BUTTONS
-              client.sendButtonText(m.chat, teks, `${global.botname}`, playAgain);
+              //client.sendButtonText(m.chat, teks, `${global.botname}`, playAgain);
 
         }
         delete client.quiz[id]
