@@ -58,5 +58,5 @@ neoxr.create(async (m, {
    usage: ['brainly', 'ai-img'],
    use: 'query',
    category: 'utilities',
-   limit: true
+   limit: 2
 }, __filename)
