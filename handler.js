@@ -248,6 +248,10 @@ module.exports = async (client, m) => {
                client.reply(m.chat, global.status.gameInGroup, m)
                return
             }
+            if (cmd.fitai && m.isGroup && !groupSet.fitai) {
+               client.reply(m.chat, global.status.fitaiRespon, m)
+               return
+            }
             cmd.async(m, {
                client,
                args,
