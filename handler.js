@@ -249,7 +249,13 @@ module.exports = async (client, m) => {
                return
             }
             if (cmd.fitai && m.isGroup && !groupSet.fitai) {
-               client.reply(m.chat, global.status.fitaiRespon, m)
+               client.sendMessageModify(m.chat, global.status.fitaiRespon, m, {
+                  title: global.botname,
+                  ads: false,
+                  largeThumb: true,
+                  thumbnail: await Func.fetchBuffer('https://telegra.ph/file/0b32e0a0bb3b81fef9838.jpg'),
+                  url: global.db.setting.link
+               })
                return
             }
             cmd.async(m, {
