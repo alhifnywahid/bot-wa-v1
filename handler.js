@@ -116,6 +116,7 @@ module.exports = async (client, m) => {
       })
       cron.schedule('00 00 * * *', () => {
          setting.lastReset = new Date * 1
+         global.db.users.filter(v => v.limit > global.limit && !v.premium).map(v => v.limit = global.limit)
          global.db.users.filter(v => v.limit < global.limit && !v.premium).map(v => v.limit = global.limit)
          global.db.users.filter(v => v.limitGame < global.limitGame).map(v => v.limitGame = global.limitGame)
          Object.entries(global.db.statistic).map(([_, prop]) => prop.today = 0)
