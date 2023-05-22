@@ -9,7 +9,7 @@ neoxr.create(async (m, {
       let teks1 = 'now'
       let groupList = async () => Object.entries(await client.groupFetchAllParticipating()).slice(0).map(entry => entry[1])
       let groups = await groupList()
-      let rows
+      let rows = []
       groups.map(x => {
          let v = global.db.groups.find(v => v.jid == x.id)
          if (v) {
