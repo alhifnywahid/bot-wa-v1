@@ -6,9 +6,10 @@ neoxr.create(async (m, {
    Func
 }) => {
    try {
+      let teks1 = 'now'
       let groupList = async () => Object.entries(await client.groupFetchAllParticipating()).slice(0).map(entry => entry[1])
       let groups = await groupList()
-      let rows = []
+      let rows
       groups.map(x => {
          let v = global.db.groups.find(v => v.jid == x.id)
          if (v) {
@@ -39,7 +40,7 @@ neoxr.create(async (m, {
             })
          }
       })
-      client.reply(m.chat, rows, m)
+      client.reply(m.chat, teks1, m)
       /*client.sendList(m.chat, '', `Bot has joined to ${groups.length} groups. 🍟`, '', 'Tap!', [{
          rows
       }], m)*/
