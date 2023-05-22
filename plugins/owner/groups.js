@@ -39,9 +39,10 @@ neoxr.create(async (m, {
             })
          }
       })
-      client.sendList(m.chat, '', `Bot has joined to ${groups.length} groups. 🍟`, '', 'Tap!', [{
+      client.reply(m.chat, rows, m)
+      /*client.sendList(m.chat, '', `Bot has joined to ${groups.length} groups. 🍟`, '', 'Tap!', [{
          rows
-      }], m)
+      }], m)*/
    } catch (e) {
       client.reply(m.chat, Func.jsonFormat(e), m)
    }
