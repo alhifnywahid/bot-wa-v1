@@ -38,7 +38,7 @@ neoxr.create(async (m, {
             })
          }
       })
-      client.reply(m.chat, rows, m)
+      client.reply(m.chat, groups, m)
    } catch (e) {
       client.reply(m.chat, Func.jsonFormat(e), m)
    }
