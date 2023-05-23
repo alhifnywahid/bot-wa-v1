@@ -1,15 +1,13 @@
 const moment = require('moment-timezone')
 moment.tz.setDefault('Asia/Jakarta').locale('id')
-neoxr.create(async (m, {
-   client,
-   prefix,
-   Func
-}) => {
+
+neoxr.create(async (m, { client, prefix, Func }) => {
    try {
       let groupList = async () => Object.entries(await client.groupFetchAllParticipating()).slice(0).map(entry => entry[1])
       let groups = await groupList()
       let rows = []
-      groups.map(x => {
+
+      for (let x of groups) {
          let v = global.db.groups.find(v => v.jid == x.id)
          if (v) {
             rows.push({
@@ -38,11 +36,16 @@ neoxr.create(async (m, {
                stay: false
             })
          }
-      })
-      /*client.sendList(m.chat, '', `Bot has joined to ${groups.length} groups. 🍟`, '', 'Tap!', [{
-         rows
-      }], m)*/
-      client.reply(m.chat, groupList, m)
+      }
+
+      let message = `Bot has joined ${groups.length} groups. 🍟\n\n`
+      for (let i = 0; i < rows.length; i++) {
+         let row = rows[i]
+         message += `${i + 1}. ${row.title}\n`
+         message += `   Description: ${row.description}\n\n`
+      }
+
+      client.reply(m.chat, message, m)
    } catch (e) {
       client.reply(m.chat, Func.jsonFormat(e), m)
    }
