@@ -76,6 +76,7 @@ neoxr.create(async (m, {
       }
    } catch (e) {
       client.reply(m.chat, global.status.error, m)
+      console.log(e)
    }
 }, {
    usage: ['banlist', 'errlist', 'miclist', 'inpluglist', 'premlist', 'pclist'],
