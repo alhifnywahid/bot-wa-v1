@@ -49,6 +49,16 @@ neoxr.create(async (m, {
             ads: false,
             largeThumb: true
          })
+      } else if (command == 'toxiclist') {
+         const data = global.db.setting.toxic
+         if (data.length == 0) return client.reply(m.chat, Func.texted('bold', `🚩 Empty data.`), m)
+         let teks = `乂  *T O X I C L I S T*\n\n`
+         teks += data.map(v => v).join('\n') + '\n\n'
+         teks += global.footer
+         client.sendMessageModify(m.chat, teks, m, {
+            ads: false,
+            largeThumb: true
+         })
       } else if (command == 'premlist') {
          const data = global.db.users.filter(v => v.premium)
          if (data.length == 0) return client.reply(m.chat, Func.texted('bold', `🚩 Empty data.`), m)
@@ -73,9 +83,8 @@ neoxr.create(async (m, {
       }
    } catch (e) {
       client.reply(m.chat, global.status.error, m)
-      console.log(e)
    }
 }, {
-   usage: ['banlist', 'errlist', 'miclist', 'inpluglist', 'premlist', 'pclist'],
+   usage: ['banlist', 'errlist', 'miclist', 'inpluglist', 'premlist', 'pclist', 'toxiclist'],
    category: 'miscs'
 }, __filename)
