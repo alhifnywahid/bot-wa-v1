@@ -9,9 +9,6 @@ neoxr.create(async (m, {
    Func
 }) => {
    try {
-      if (!args || !args[0]) return client.sendList(m.chat, '', '🚩 Choose data type you want to see.', '', 'Tap!', [{
-         rows
-      }], m)
       if (command == 'banlist') {
          const data = global.db.users.filter(v => v.banned)
          if (data.length == 0) return client.reply(m.chat, Func.texted('bold', `🚩 Empty data.`), m)
