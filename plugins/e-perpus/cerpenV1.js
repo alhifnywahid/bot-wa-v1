@@ -34,6 +34,9 @@ neoxr.create(async (m, {
          client.reply(m.chat, Func.jsonFormat(e), m)
       }
 }, {
-   usage: ['banlist', 'errlist', 'miclist', 'inpluglist', 'premlist', 'pclist', 'toxiclist'],
-   category: 'miscs'
+   usage: ['cerpen'],
+   hidden: ['cerpenget'],
+   use: 'category',
+   category: 'e - perpus',
+   limit: true
 }, __filename)
