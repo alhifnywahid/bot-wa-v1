@@ -90,3 +90,50 @@ neoxr.create(async (m, {
    usage: ['gcopt', 'gc'],
    owner: true
 }, __filename)
+
+
+const steal = (Func, data) => {
+   return `乂  S T E A L E R
+
+	◦  Name : ${data.name}
+	◦  Member : ${data.member}
+	◦  Expired : ${data.time}
+	◦  Status : ${Func.switcher(data.group.mute, 'OFF', 'ON')}
+	◦  Bot Admin : ${Func.switcher(data.admin, '√', '×')}`
+}
+
+const explain = (prefix, cmd) => {
+   return `乂  M O D E R A T I O N
+
+1. ${prefix + cmd} <no>
+- to steal / get group info
+
+2. ${prefix + cmd} <no> open
+- to open the group allow all members to send messages
+
+3. ${prefix + cmd} <no> close
+- to close the group only admins can send messages
+
+4. ${prefix + cmd} <no> mute
+- to mute / turn off in the group
+
+5. ${prefix + cmd} <no> unmute
+- to unmute / turn on in the group
+
+6. ${prefix + cmd} <no> link
+- to get the group invite link, make sure the bot is an admin
+
+7. ${prefix + cmd} <no> leave
+- to leave the group
+
+8. ${prefix + cmd} <no> reset
+- to reset group configuration to default
+
+9. ${prefix + cmd} <no> forever
+- to make bots stay forever in the group
+
+10. ${prefix + cmd} <no> 1d/3d/7d/30d
+- to set the duration of the bot in the group
+Example : ${prefix + cmd} 2 1d
+
+NB : Make sure you reply to messages containing group list to use this moderation options, send ${prefix}groups to show all group list.`}
