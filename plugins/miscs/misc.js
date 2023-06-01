@@ -32,7 +32,7 @@ neoxr.create(async (m, {
       client.reply(m.chat, Func.jsonFormat(e), m)
    }
 }, {
-   usage: ['checkapi', 'runtime', 'server'],
-   hidden: ['owner', 'api', 'run', 'tourl'],
+   usage: ['owner'],
+   hidden: ['owner', 'api', 'runtime', 'tourl', 'server', 'checkapi'],
    category: 'miscs'
 }, __filename)
