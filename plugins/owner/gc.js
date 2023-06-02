@@ -23,7 +23,7 @@ neoxr.create(async (m, {
             const option = useOpt ? (args[1]).toLowerCase() : false
             const time = group.stay ? 'FOREVER' : (group.expired == 0 ? 'NOT SET' : Func.timeReverse(group.expired - new Date() * 1))
             const member = groupMetadata.participants.map(u => u.id).length
-            const pic = await client.profilePictureUrl(jid, 'image')
+            //const pic = await client.profilePictureUrl(jid, 'image')
             let data = {
                name: groupName,
                member,
