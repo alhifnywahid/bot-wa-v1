@@ -2,7 +2,9 @@ neoxr.create(async (m, {
    client,
    args,
    prefix,
-   command }) => {
+   command,
+   Func
+}) => {
       try {
          if (m.quoted && (m.quoted.text).match(/gcopt/g) && m.quoted.sender == client.decodeJid(client.user.id)) {
             if (!args || !args[0]) return m.reply(Func.texted('bold', `🚩 Give the group number argument in order.`))
