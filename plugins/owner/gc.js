@@ -33,7 +33,7 @@ neoxr.create(async (m, {
             }
             if (!useOpt) return client.sendMessageModify(m.chat, steal(Func, data) + '\n\n' + global.footer, m, {
                largeThumb: true,
-               thumbnail: await Func.fetchBuffer(pic)
+               thumbnail: await Func.fetchBuffer(global.db.setting.cover)
             })
             if (option == 'open') {
                if (!admin) return client.reply(m.chat, Func.texted('bold', `🚩 Can't open ${groupName} group link because the bot is not an admin.`), m)
