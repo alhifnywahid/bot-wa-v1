@@ -1,3 +1,4 @@
+const moment = require('moment-timezone')
 neoxr.create(async (m, { 
    client,
    args,
@@ -95,13 +96,17 @@ neoxr.create(async (m, {
 
 
 const steal = (Func, data) => {
+      const meta = await (await client.groupMetadata(m.chat))
+	
    return `乂  S T E A L E R
 
 	◦  Name : ${data.name}
 	◦  Member : ${data.member}
 	◦  Expired : ${data.time}
 	◦  Status : ${Func.switcher(data.group.mute, 'OFF', 'ON')}
-	◦  Bot Admin : ${Func.switcher(data.admin, '√', '×')}`
+	◦  Bot Admin : ${Func.switcher(data.admin, '√', '×')}
+	◦  Created : ${moment(meta.creation * 1000).format('DD/MM/YY HH:mm:ss')}
+	◦  Owner : ${meta.owner ? '@' + meta.owner.split('@')[0] : m.chat.match('-') ? '@' + m.chat.split('-')[0] : '@0'}`
 }
 
 const explain = (prefix, cmd) => {
