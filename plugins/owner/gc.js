@@ -30,7 +30,7 @@ neoxr.create(async (m, {
                member,
                time,
                group,
-               admin
+               admin,
             }
             if (!useOpt) return client.sendMessageModify(m.chat, steal(Func, data) + '\n\n' + global.footer, m, {
                largeThumb: true,
@@ -95,18 +95,14 @@ neoxr.create(async (m, {
 }, __filename)
 
 
-const steal = (Func, data) => {
-      const meta = await (await client.groupMetadata(m.chat))
-	
+const steal = (Func, data) => {	
    return `乂  S T E A L E R
 
 	◦  Name : ${data.name}
 	◦  Member : ${data.member}
 	◦  Expired : ${data.time}
 	◦  Status : ${Func.switcher(data.group.mute, 'OFF', 'ON')}
-	◦  Bot Admin : ${Func.switcher(data.admin, '√', '×')}
-	◦  Created : ${moment(meta.creation * 1000).format('DD/MM/YY HH:mm:ss')}
-	◦  Owner : ${meta.owner ? '@' + meta.owner.split('@')[0] : m.chat.match('-') ? '@' + m.chat.split('-')[0] : '@0'}`
+	◦  Bot Admin : ${Func.switcher(data.admin, '√', '×')}`
 }
 
 const explain = (prefix, cmd) => {
