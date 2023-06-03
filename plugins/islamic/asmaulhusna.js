@@ -6,24 +6,20 @@ neoxr.create(async (m, {
    args,
    Func
 }) => {
-      try {
-        let json = JSON.parse(JSON.stringify(global.asmaulhusna))
-        let data = json.map((v, i) => `${i + 1}. ${v.latin}\n${v.arabic}\n${v.translation_id}`).join('\n\n')
-        if (isNaN(args[0])) return client.reply(m.chat, Func.example(prefix, command, '1'), m)
-        if (args[0]) {
-            if (args[0] < 1 || args[0] > 99) throw `minimal 1 & maksimal 99!`
-            let { index, latin, arabic, translation_id, translation_en } = json.find(v => v.index == args[0].replace(/[^0-9]/g, ''))
-            return client.reply(`No. ${index}
-    ${arabic}
-    ${latin}
-    ${translation_id}
-    ${translation_en}
-    `.trim())
-        }
-        let sout = '么 A S M A U L  H U S N A\n\n'
-        sout += data + '\n\n'
-        sout += 'Dari Abu hurarirah radhiallahu anhu, Rasulullah Saw bersabda:\nإِنَّ لِلَّهِ تَعَالَى تِسْعَةً وَتِسْعِينَ اسْمًا، مِائَةٌ إِلَّا وَاحِدًا، مَنْ أَحْصَاهَا دخل الجنة، وهو وتر يُحِبُّ الْوِتْرَ\nArtinya: \"Sesungguhnya Allah mempunyai sembilan puluh sembilan nama, alias seratus kurang satu. Barang siapa yang menghitung-hitungnya, niscaya masuk surga; Dia Witir dan menyukai yang witir\"'
-  } catch (e) {
+   try {
+      let json = JSON.parse(JSON.stringify(global.asmaulhusna))
+      let data = json.map((v, i) => `${i + 1}. ${v.latin}\n${v.arabic}\n${v.translation_id}`).join('\n\n')
+      if (isNaN(args[0])) return client.reply(m.chat, Func.example(prefix, command, '1'), m)
+      if (args[0]) {
+         if (args[0] < 1 || args[0] > 99) throw `Minimal 1 & maksimal 99!`
+         let { index, latin, arabic, translation_id, translation_en } = json.find(v => v.index == args[0].replace(/[^0-9]/g, ''))
+         return client.reply(m.chat, `No. ${index}\n${arabic}\n${latin}\n${translation_id}\n${translation_en}`.trim(), m)
+      }
+      let sout = '么 A S M A U L  H U S N A\n\n'
+      sout += data + '\n\n'
+      sout += 'Dari Abu hurarirah radhiallahu anhu, Rasulullah Saw bersabda:\nإِنَّ لِلَّهِ تَعَالَى تِسْعَةً وَتِسْعِينَ اسْمًا، مِائَةٌ إِلَّا وَاحِدًا، مَنْ أَحْصَاهَا دخل الجنة، وهو وتر يُحِبُّ الْوِتْرَ\nArtinya: \"Sesungguhnya Allah mempunyai sembilan puluh sembilan nama, alias seratus kurang satu. Barang siapa yang menghitung-hitungnya, niscaya masuk surga; Dia Witir dan menyukai yang witir\"'
+      return client.reply(m.chat, sout, m)
+   } catch (e) {
       client.reply(m.chat, Func.jsonFormat(e), m)
    }
 }, {
