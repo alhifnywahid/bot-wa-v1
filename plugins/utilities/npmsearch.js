@@ -9,15 +9,16 @@ neoxr.create(async (m, {
 }) => {
    try {
     if (!text) return client.reply(m.chat, Func.example(prefix, command, 'list'), m)
+    client.sendReact(m.chat, '🕒', m.key)
 	let res = await fetch(`http://registry.npmjs.com/-/v1/search?text=${text}`)
 	let { objects } = await res.json()
 	if (!objects.length) throw `Package "${text}" not found`
 	let txt = objects.map(({ package: pkg }) => {
         let jo = '么 N P M  S E A R C H\n\n'
-        jo += '*Package Name : * ' + pkg.name + '\n'
-        jo += '*Version : * ' + pkg.version + '\n'
-        jo += '*Link : * ' + pkg.links.npm + '\n'
-        jo += '*Description : * ' + pkg.description + '\n'
+        jo += '*Package Name* : ' + pkg.name + '\n'
+        jo += '*Version* : ' + pkg.version + '\n'
+        jo += '*Link* : ' + pkg.links.npm + '\n'
+        jo += '*Description* : ' + pkg.description + '\n'
 		return jo
 	}).join`\n`
 	m.reply(txt)
@@ -25,7 +26,7 @@ neoxr.create(async (m, {
       client.reply(m.chat, Func.jsonFormat(e), m)
    }
 }, {
-   usage: ['npmseacrch'],
+   usage: ['npmseacrh'],
    use: 'query',
    category: 'utilities',
    limit: 1,
