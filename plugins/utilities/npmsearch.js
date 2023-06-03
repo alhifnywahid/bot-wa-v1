@@ -13,12 +13,13 @@ neoxr.create(async (m, {
 	let { objects } = await res.json()
 	if (!objects.length) throw `Package "${text}" not found`
 	let txt = objects.map(({ package: pkg }) => {
-        let jo = '*Package Name : *' + pkg.name + '\n'
-        jo += '*Version : *' + pkg.version + '\n'
-        jo += '*Link : *' + pkg.links.npm + '\n'
-        jo += '*Description : *' + pkg.description + '\n'
+        let jo = '么 N P M  S E A R C H\n\n'
+        jo += '*Package Name : * ' + pkg.name + '\n'
+        jo += '*Version : * ' + pkg.version + '\n'
+        jo += '*Link : * ' + pkg.links.npm + '\n'
+        jo += '*Description : * ' + pkg.description + '\n'
 		return jo
-	}).join`\n\n`
+	}).join`\n`
 	m.reply(txt)
    } catch (e) {
       client.reply(m.chat, Func.jsonFormat(e), m)
