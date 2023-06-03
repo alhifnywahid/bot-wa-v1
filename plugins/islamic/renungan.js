@@ -9,7 +9,7 @@ neoxr.create(async (m, {
    }
 }, {
    usage: ['renungan'],
-   category: 'random',
+   category: 'islamic',
    limit: true
 }, __filename)
 function pickRandom(list) {
