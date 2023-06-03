@@ -14,7 +14,7 @@ neoxr.create(async (m, {
 	let { objects } = await res.json()
 	if (!objects.length) throw `Package "${text}" not found`
 	let txt = objects.map(({ package: pkg }) => {
-        let jo = '*Package Name* : ' + pkg.name
+        let jo = '*Package Name* : ' + pkg.name + '\n'
         jo += '*Version* : ' + pkg.version + '\n'
         jo += '*Link* : ' + pkg.links.npm + '\n'
         jo += '*Description* : ' + pkg.description + '\n'
