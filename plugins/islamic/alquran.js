@@ -9,11 +9,12 @@ neoxr.create(async (m, {
    try {
     if (!(args[0] || args[1])) throw client.reply(m.chat, Func.example(prefix, command, '1 2'), m)
     if (isNaN(args[0]) || isNaN(args[1])) throw client.reply(m.chat, Func.example(prefix, command, '1 2'), m)
+    client.sendReact(m.chat, '🕒', m.key)
     let res = await alquran(args[0], args[1])
     let sout = res.arab + '\n'
     sout += res.latin + '\n\n'
     sout += res.terjemahan + '\n'
-    sout += res.readMore + '\n'
+    sout += readMore + '\n'
     sout += res.tafsir + '\n'
     sout += res.surah + '\n'
     client.reply(m.chat, sout, m)
