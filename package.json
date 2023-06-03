@@ -25,6 +25,7 @@
       "cfonts": "3.1.1",
       "express": "^4.18.2",
       "node-cron": "^3.0.0",
+      "dandi-api": "^1.2.0",
       "node-gtts": "^2.0.2",
       "qrcode": "^1.5.0",
       "qrcode-terminal": "^0.12.0",
