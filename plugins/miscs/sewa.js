@@ -3,14 +3,16 @@ neoxr.create(async (m, {
    Func
 }) => {
       try {
-        var p = `*❏ SEWABOT*
-
-Jika kamu ingin memasukkan bot ke grup kamu, kamu hanya perlu membayar 5k durasi 1 bulan.
-    
-Pembayaran via GOPAY, DANA, SHOPEEPAY dan OVO.
-
-Untuk lebih lanjut silahkan chat ke https://wa.me/6285936173955 atau kamu bisa ketik *.owner*`
-   client.sendMessageModify(m.chat, p, m, {
+         let teks = '*么 S E W A  B O T*\n\n'
+         teks += '*HARGA*\n'
+         teks += '◦ 5.000 Ribu selama 1 bulan.\n\n'
+         teks += '*PEMBAYARAN YANG TERSEDIA*\n'
+         teks += '◦ Ewallet = Dana, Ovo, Gopay, Shopeepay & link Aja.\n'
+         teks += '◦ Bank = Tersedia Semua Bank.\n'
+         teks += '◦ Qris = Tersedia Semua Qris.\n'
+         teks += '◦ Pulsa = Xl & Indosat.\n\n'
+         teks += 'Silahkan hubungi *.owner* untuk melakukan pembelian premium.'
+   client.sendMessageModify(m.chat, teks, m, {
    title: global.botname,
    ads: false,
    largeThumb: true,
