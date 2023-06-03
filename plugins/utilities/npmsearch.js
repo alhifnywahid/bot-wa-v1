@@ -14,19 +14,20 @@ neoxr.create(async (m, {
 	let { objects } = await res.json()
 	if (!objects.length) throw `Package "${text}" not found`
 	let txt = objects.map(({ package: pkg }) => {
-        let jo = '么 N P M  S E A R C H\n\n'
-        jo += '*Package Name* : ' + pkg.name + '\n'
+        let jo = '*Package Name* : ' + pkg.name
         jo += '*Version* : ' + pkg.version + '\n'
         jo += '*Link* : ' + pkg.links.npm + '\n'
         jo += '*Description* : ' + pkg.description + '\n'
 		return jo
 	}).join`\n`
-	m.reply(txt)
+   let final = '*么 N P M  S E A R C H*\n\n'
+   final += txt
+	client.reply(m.chat, final, m)
    } catch (e) {
       client.reply(m.chat, Func.jsonFormat(e), m)
    }
 }, {
-   usage: ['npmseacrh'],
+   usage: ['npmsearch'],
    use: 'query',
    category: 'utilities',
    limit: 1,
