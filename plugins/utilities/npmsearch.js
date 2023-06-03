@@ -14,9 +14,9 @@ neoxr.create(async (m, {
 	if (!objects.length) throw `Query "${text}" not found :/`
 	let txt = objects.map(({ package: pkg }) => {
         let jo = pkg.name + '\n'
-        jo += pkg.version
-        jo += pkg.links.npm
-        jo += pkg.description
+        jo += pkg.version '\n'
+        jo += pkg.links.npm '\n'
+        jo += pkg.description '\n'
 		return jo
 	}).join`\n\n`
 	m.reply(txt)
