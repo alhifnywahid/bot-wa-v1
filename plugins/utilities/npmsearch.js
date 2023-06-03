@@ -11,12 +11,12 @@ neoxr.create(async (m, {
     if (!text) return client.reply(m.chat, Func.example(prefix, command, 'list'), m)
 	let res = await fetch(`http://registry.npmjs.com/-/v1/search?text=${text}`)
 	let { objects } = await res.json()
-	if (!objects.length) throw `Query "${text}" not found :/`
+	if (!objects.length) throw `Package "${text}" not found`
 	let txt = objects.map(({ package: pkg }) => {
-        let jo = pkg.name + '\n'
-        jo += pkg.version + '\n'
-        jo += pkg.links.npm + '\n'
-        jo += pkg.description + '\n'
+        let jo = '*Package Name : *' + pkg.name + '\n'
+        jo += '*Version : *' + pkg.version + '\n'
+        jo += '*Link : *' + pkg.links.npm + '\n'
+        jo += '*Description : *' + pkg.description + '\n'
 		return jo
 	}).join`\n\n`
 	m.reply(txt)
