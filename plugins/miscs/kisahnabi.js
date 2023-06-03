@@ -1,3 +1,4 @@
+const fetch = require('node-fetch')
 neoxr.create(async (m, {
    command,
    text,
@@ -6,7 +7,7 @@ neoxr.create(async (m, {
    Func
 }) => {
       try {
-         if (!text) return client.reply(m.chat, Func.example(prefix, command, 'kisahnabi sulaiman'), m)
+         if (!text) return client.reply(m.chat, Func.example(prefix, command, 'sulaiman'), m)
          let url = await fetch(`https://raw.githubusercontent.com/ZeroChanBot/Api-Freee/a9da6483809a1fbf164cdf1dfbfc6a17f2814577/data/kisahNabi/${text}.json`)
          let kisah = await url.json().catch(_ => "Error")
          if (kisah == "Error") throw "*Not Found*\n*📮 ᴛɪᴘs :* coba jangan gunakan huruf capital"
