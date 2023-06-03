@@ -15,7 +15,8 @@ neoxr.create(async (m, {
     sout += json.articles + '\n'
     await client.reply(m.chat, sout.trim(), m)
    } catch (e) {
-      client.reply(m.chat, Func.jsonFormat(e), m)
+      client.reply(m.chat, e, m)
+      console.log(e)
    }
 }, {
    usage: ['wikipedia'],
