@@ -3,7 +3,7 @@ neoxr.create(async (m, {
    Func
 }) => {
       try {
-         await client.sendFile(m.chat, pickRandom(global.renungan), '', `🍟 *Fetching* : ${((new Date - old) * 1)} ms`, m)
+         await client.sendFile(m.chat, pickRandom(global.renungan), '', `Nih`, m)
   } catch (e) {
       client.reply(m.chat, Func.jsonFormat(e), m)
    }
