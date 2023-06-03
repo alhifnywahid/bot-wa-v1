@@ -3,7 +3,7 @@ neoxr.create(async (m, {
    Func
 }) => {
       try {
-         let teks = '*么 S E W A  B O T*\n\n'
+         var teks = '*么 S E W A  B O T*\n\n'
          teks += '*HARGA*\n'
          teks += '◦ 5.000 Ribu selama 1 bulan.\n\n'
          teks += '*PEMBAYARAN YANG TERSEDIA*\n'
