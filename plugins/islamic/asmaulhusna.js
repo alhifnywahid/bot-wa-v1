@@ -3,6 +3,7 @@ neoxr.create(async (m, {
    text,
    prefix,
    client,
+   args,
    Func
 }) => {
       try {
