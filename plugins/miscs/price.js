@@ -16,17 +16,20 @@ neoxr.create(async (m, {
      },
      type: 1
    }]
-   let teks = `*❏ INFO PREMIUM*
-  
-   Dengan mendaftar menjadi user premium anda akan mendapatkan keuntungan sebagai berikut :
-   
-   1. Bisa menggunakan semua fitur.
-   2. Mendapatkan 10.000 limit
-   3. Jika bot mode grouponly user premium bisa memainkan di pesan pribadi
-   
-   Silahkan hubungi *.owner* untuk melakukan upgrade premium hanya dengan Rp. 5.000 per bulan
-   
-   Invite bot ke GC kalian ? ketik *.sewabot*`
+   let teks = '*么 I N F O  P R E M I U M*\n\n'
+   teks += '*KEUNTUNGAN*\n'
+   teks += '◦ Bisa menggunakan semua fitur.\n'
+   teks += '◦ Mendapatkan 10.000 limit.\n'
+   teks += '◦ Jika bot mode grouponly user premium bisa memainkan di pesan pribadi.\n\n'
+   teks += '*HARGA*\n'
+   teks += '◦ 5.000 Ribu selama 1 bulan (Tidak harus langganan setiap bulan)\n\n'
+   teks += '*PEMBAYARAN YANG TERSEDIA*\n'
+   teks += '◦ Ewallet = Dana, Ovo, Gopay, Shopeepay & link Aja\n'
+   teks += '◦ Bank = Tersedia Semua Bank\n'
+   teks += '◦ Qris = Tersedia Semua Qris\n'
+   teks += '◦ Pulsa = +62 859-3617-3955\n\n'
+   teks += 'Silahkan hubungi *.owner* untuk melakukan pembelian premium.\n'
+   teks += 'Invite bot ke GC kalian ? ketik *.sewabot*'
    try {
      //! SEND MESSAGE WITH TEKS 
       client.reply(m.chat, `${teks}`, m)
