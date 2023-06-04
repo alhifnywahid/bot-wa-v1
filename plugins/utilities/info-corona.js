@@ -21,8 +21,8 @@ neoxr.create(
   },
   {
     usage: ["infocorona"],
-    hidden: ['corona'],
-    use: "query",
+    hidden: ["corona"],
+    use: "country",
     category: "utilities",
     limit: 1,
     premium: true,
