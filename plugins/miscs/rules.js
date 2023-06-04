@@ -20,7 +20,7 @@ neoxr.create(async (m, {
 }, __filename)
 
 const rule = () => { 
-   let final = '*么 R U L E S - B O T'
+   let final = '*么 R U L E S - B O T*\n\n'
    final += '➠ Data user, grup, dan chat akan otomatis terhapus jika tidak ada aktivitas yang terdeteksi selama 7 hari (alasan: pembersihan database).\n'
    final += '➠ Pengguna gratis mendapatkan 15 / hari dan akan direset setelah 12 jam.\n'
    final += '➠ Jangan spam, jeda setiap penggunaan perintah selama 3 detik.\n'
