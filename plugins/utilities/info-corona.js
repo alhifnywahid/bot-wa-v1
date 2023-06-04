@@ -4,13 +4,14 @@ neoxr.create(
     try {
       if (!text) return client.reply(m.chat, Func.example(prefix, command, "indonesia"), m);
       client.sendReact(m.chat, "🕒", m.key);
+      if(API.total_kasus===' total') return console.log('*Country Not Found*')
       const API = await dhn_api.CoronaInfo(text);
       let sout = '*么   I N F O - C O R O N A*\n\n'
       sout += '➠ *Negara* : ' + text + '\n'
-      sout += '➠ *Total Kasus* : ' + API.total_kasus + '\n'
-      sout += '➠ *Total Kematian* : ' + API.total_kematian + '\n'
-      sout += '➠ *Total sembuh* : ' + API.total_sembuh + '\n'
-      sout += '➠ *Informasi* : ' + API.informasi + '\n'
+      sout += '➠ *Total Kasus* : ' + API.total_kasus.replace(' total', '') + '\n'
+      sout += '➠ *Total Kematian* : ' + API.total_kematian.replace(' total', '') + '\n'
+      sout += '➠ *Total sembuh* : ' + API.total_sembuh.replace(' total', '') + '\n'
+      sout += '➠ *Informasi* : ' + API.informasi.split(':')[1].trim() + '\n'
       sout += '➠ *Sumber* : ' + API.informasi_lengkap + '\n\n'
       sout += global.footer
       client.reply(m.chat, sout, m);
@@ -28,3 +29,4 @@ neoxr.create(
     premium: true,
   },
   __filename);
+
