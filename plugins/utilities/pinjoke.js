@@ -12,12 +12,12 @@ neoxr.create(
         client.sendFile(m.chat, json.url, '', `${i}. 🍟 *Fetching* : ${((new Date - old) * 1)} ms`, m)
       }
     } catch (e) {
-      client.reply(m.chat, 'Maaf sepertinya fitur ini sedang eror!', m);
+      client.reply(m.chat, Func.jsonFormat(e), m)
       console.log(e);
     }
   },
   {
-    usage: ["pinjoke"],
+    usage: ["pinterest"],
     use: "query",
     category: "utilities",
     limit: 1,
