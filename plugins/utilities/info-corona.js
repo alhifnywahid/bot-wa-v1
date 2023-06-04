@@ -3,9 +3,9 @@ neoxr.create(
   async (m, { command, text, prefix, client, args, Func }) => {
     try {
       if (!text) return client.reply(m.chat, Func.example(prefix, command, "indonesia"), m);
+      const API = await dhn_api.CoronaInfo(text);
       client.sendReact(m.chat, "🕒", m.key);
       if(API.total_kasus===' total') return console.log('*Country Not Found*')
-      const API = await dhn_api.CoronaInfo(text);
       let sout = '*么   I N F O - C O R O N A*\n\n'
       sout += '➠ *Negara* : ' + text + '\n'
       sout += '➠ *Total Kasus* : ' + API.total_kasus.replace(' total', '') + '\n'
