@@ -20,35 +20,15 @@ neoxr.create(async (m, {
 }, __filename)
 
 const rule = () => { 
-return `
-❏ INFO 
-• Ketik .menu untuk melihat info bot
-• Group ini berisi SPAM CHAT
-• Matikan autodownload media untuk menghemat data/kuota
-• Limit reset otomatis setiap jam 00:00
-• Jumlah limit harian 10 Dan Limit game 5
-• Mau beli premium? Ketik .premium
-• Kalo mau beli limit pake point beli secukupnya aja, soalnya kalo buyall nanti percuma limitnya ke reset lagi otomatis jam 12 malam
-
-❏ RULES 
-• Jangan ada bot lain ! AutoKick
-• Jangan kirim gc lain ! Autokick
-• ANTI LINK ON ! Kirim link Autokick
-• Jangan spam stiker 
-• Jangan bikin rusuh
-• Harus saling menghargai
-• Jangan spam bot (Jeda setiap penggunaan perintah adalah 3 detik) ngeyel spam? = banned 30 menit | 3 Kali kena banned 30min? = Banned permanen 
-• Jangan kirim virtex/BUG
-• Dilarang keras rasis !
-• Jangan toxic berlebihan !
-• Masuk sini minimal ngerti cara pake bot !
-• Kirim 18+ AutoKick
-• Menggunakan kata toxic yang dilist = +1 warning
-5 Warning = Kick
-
-Nomer Bot | wa.me/6287877120437
-Group Official | https://chat.whatsapp.com/JpO7oMMgK975NMhJA7Qrnj
-Group Khusus Game | https://chat.whatsapp.com/HfbVjUdEIjY0Wg7FsYZIoj
-`
+   let final = '*么 R U L E S - B O T'
+   final += '➠ Data user, grup, dan chat akan otomatis terhapus jika tidak ada aktivitas yang terdeteksi selama 7 hari (alasan: pembersihan database).\n'
+   final += '➠ Pengguna gratis mendapatkan 15 / hari dan akan direset setelah 12 jam.\n'
+   final += '➠ Jangan spam, jeda setiap penggunaan perintah selama 3 detik.\n'
+   final += '➠ Jangan melakukan panggilan suara atau video (Telepon & Video Call), jika Anda melakukannya akan diblokir.\n'
+   final += '➠ Jangan toxic ke bot karena kalian akan mendapatkan sanksi berupa banned dan block.\n'
+   final += '➠ Jangan mencari & membuat konten dewasa (+18), misal: membuat stiker dari foto bugil atau mencari desahan ASMR.\n'
+   final += '➠ Jika ingin membuka blokir dan unbanned, masing-masing akan dikenakan biaya sebesar Rp. 5.000.\n'
+   final += '➠ Spammer akan secara permanen dilarang untuk pengguna gratis dan premium (+ tidak ada pengembalian uang).\n'
+   final += '➠ Semua Syarat & Ketentuan dapat berubah sewaktu-waktu tanpa pemberitahuan sebelumnya.\n'
+return final
 }
-
