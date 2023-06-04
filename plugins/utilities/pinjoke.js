@@ -19,7 +19,8 @@ neoxr.create(async (m, {
       await Func.delay(2000)
     }
   } catch (e) {
-    client.reply(m.chat, Func.jsonFormat(e), m)
+    client.reply(m.chat, e, m)
+    console.log(e)
   }
 }, {
   usage: ['pinjoke'],
