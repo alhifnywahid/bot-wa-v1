@@ -8,7 +8,6 @@ neoxr.create(async (m, {
    Func
 }) => {
    try {
-    text  = 'neraka'
     if (!text) return client.reply(m.chat, Func.example(prefix, command, 'neraka'), m)
     client.sendReact(m.chat, '🕒', m.key)
     let data = await ds.TafsirSurah(text);
