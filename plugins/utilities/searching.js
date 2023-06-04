@@ -104,7 +104,7 @@ neoxr.create(async (m, {
          client.sendList(m.chat, '', `Showing search results for : “${text}” 🍟`, '', 'Tap!', [{
             rows
          }], m)
-      } else if (command == 'pinterest') {
+      } else if (command == 'pinterest2') {
          if (!text) return client.reply(m.chat, Func.example(prefix, command, 'cat'), m)
          client.sendReact(m.chat, '🕒', m.key)
          let old = new Date()
@@ -174,8 +174,8 @@ neoxr.create(async (m, {
       client.reply(m.chat, Func.jsonFormat(e), m)
    }
 }, {
-   usage: ['chord', 'lirik', 'pinterest', 'google', 'goimg', 'ytsearch', 'apk', 'apkmod'],
-   hidden: ['yts', 'ytfind', 'getapk', 'getapkmod'],
+   usage: ['chord', 'lirik', 'google', 'goimg', 'ytsearch', 'apk', 'apkmod'],
+   hidden: ['yts', 'pinterest2', 'ytfind', 'getapk', 'getapkmod'],
    use: 'query',
    category: 'utilities',
    premium: true,
