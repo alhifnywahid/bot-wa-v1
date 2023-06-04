@@ -11,12 +11,12 @@ neoxr.create(async (m, {
     if (!text) return client.reply(m.chat, Func.example(prefix, command, 'neraka'), m)
     client.sendReact(m.chat, '🕒', m.key)
     let data = await ds.TafsirSurah(text);
-    let final = '*么 T A F S I R  Q U R \' A N\n\n'
+    let final = '*么  T A F S I R - Q U R \' A N*\n\n'
     data.forEach(item => {
-        final += ' ◦ Surah:' + item.surah + '\n'
-        final += ' ◦ Tafsir:' + item.tafsir + '\n'
-        final += ' ◦ Type:' + item.type + '\n'
-        final += ' ◦ Link:' + item.source + '\n\n\n'
+        final += '➠ *Surah* : ' + item.surah + '\n'
+        final += '➠ *Tafsir* : ' + item.tafsir + '\n'
+        final += '➠ *Sumber* : ' + item.source + '\n\n'
+        final += Func.texted('bold', 'Simlple WhatsApp Bot by GOPRET')
     });
     client.reply(m.chat, final, m)
    } catch (e) {
