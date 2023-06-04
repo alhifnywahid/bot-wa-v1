@@ -11,6 +11,7 @@ neoxr.create(async (m, {
     if (!text) return client.reply(m.chat, Func.example(prefix, command, 'neraka'), m)
     client.sendReact(m.chat, '🕒', m.key)
     let data = await ds.TafsirSurah(text);
+    if (data=='') return client.reply(m.chat, '*Tafsir Not Found!*', m)
     let final = '*么  T A F S I R - Q U R \' A N*\n\n'
     data.forEach(item => {
         final += '➠ *Surah* : ' + item.surah + '\n'
