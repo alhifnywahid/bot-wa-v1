@@ -2,7 +2,7 @@ const dhn_api = require("dhn-api");
 neoxr.create(
   async (m, { command, text, prefix, client, args, Func }) => {
     try {
-      if (!text) return client.reply(m.chat, Func.example(prefix, command, "kucing"), m);
+      if (!text) return client.reply(m.chat, Func.example(prefix, command, "indonesia"), m);
       client.sendReact(m.chat, "🕒", m.key);
       const API = await dhn_api.CoronaInfo(text);
       let sout = '*么   I N F O - C O R O N A*\n\n'
