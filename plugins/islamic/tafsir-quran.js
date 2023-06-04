@@ -16,8 +16,8 @@ neoxr.create(async (m, {
         final += '➠ *Surah* : ' + item.surah + '\n'
         final += '➠ *Tafsir* : ' + item.tafsir + '\n'
         final += '➠ *Sumber* : ' + item.source + '\n\n'
-        final += Func.texted('bold', 'Simlple WhatsApp Bot by GOPRET')
     });
+    final += Func.texted('bold', 'Simlple WhatsApp Bot by GOPRET')
     client.reply(m.chat, final, m)
    } catch (e) {
       client.reply(m.chat, Func.jsonFormat(e), m)
