@@ -18,7 +18,7 @@ neoxr.create(async (m, {
     sout += res.terjemahan + '\n'
     sout += readMore + '\n'
     sout += res.tafsir + '\n'
-    if (res.surahh == "Al-Qur'an Digital") return client.reply(m.chat, 'Maaf surah/ayat yang anda cari tidak ada', m)
+    if (res.surahh === "Al-Qur'an Digital") return client.reply(m.chat, 'Maaf surah/ayat yang anda cari tidak ada', m)
     client.reply(m.chat, sout, m)
    } catch (e) {
       client.reply(m.chat, Func.jsonFormat(e), m)
