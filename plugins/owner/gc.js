@@ -88,7 +88,7 @@ neoxr.create(async (m, {
      client.reply(m.chat, Func.jsonFormat(e), m)
   }
 }, {
-  usage: ['autodownload', 'debug', 'groupmode', 'multiprefix', 'online', 'self', 'noprefix', 'games', 'verify', 'chatbot'],
+  usage: ['gcopt', 'gc'],
   use: 'on / off',
   category: 'owner',
   owner: true
