@@ -1,4 +1,4 @@
-const ds = require('dandi-api');
+const dhn_api = require("dhn-api");
 neoxr.create(async (m, {
    command,
    text,
