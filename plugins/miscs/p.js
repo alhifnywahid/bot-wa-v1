@@ -11,6 +11,6 @@ neoxr.create(async (m, {
      client.reply(m.chat, Func.jsonFormat(e), m)
   }
 }, {
-  hidden: ['p'],
+  hidden: ['p', 'bot'],
   error: false,
 }, __filename)
