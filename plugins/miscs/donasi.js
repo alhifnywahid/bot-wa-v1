@@ -32,6 +32,5 @@ Metode Pembayaran:
 ➠ Pulsa: 085936173955
 ➠ Saweria: https://saweria.co/megachanbot
 
-
 Terimakasih, dengan berkah mu owner dapat meningkatkan performa ${global.botname}`
 }
