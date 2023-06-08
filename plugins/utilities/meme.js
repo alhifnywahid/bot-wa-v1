@@ -10,13 +10,13 @@ neoxr.create(async (m, {
    try {
     const meme = hispamemes.meme()
     client.sendFile(m.chat, meme, m)
-  } catch (e) {
-    client.reply(m.chat, e, m)
-    console.log(e)
-  }
+   } catch (e) {
+      console.log(e)
+      return client.reply(m.chat, Func.texted('bold', e.message), m)
+   }
 }, {
-  usage: ['meme'],
-  category: 'utilities',
-  limit: 1,
-  premium: true
-}, __filename);
+   usage: ['meme'],
+   category: 'utilities',
+   premium: true,
+   limit: true
+}, __filename)
