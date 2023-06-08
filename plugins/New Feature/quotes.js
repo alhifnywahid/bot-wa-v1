@@ -19,7 +19,7 @@ neoxr.create(async (m, {
    }
 }, {
    usage: ['quotes'],
-   category: 'utilites',
+   category: 'a new feature',
    premium: true,
    limit: 1,
 }, __filename);
