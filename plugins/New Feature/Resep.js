@@ -12,7 +12,7 @@ neoxr.create(async (m, {
   try {
     const sender = m.sender;
     if (waitingForReply[sender]) {
-      const pilihan = parseInt(text);
+      const pilihan = parseInt(m.quotedMsg.body);
       const CariResep = waitingForReply[sender].CariResep;
       
       if (isNaN(pilihan) || pilihan < 1 || pilihan > CariResep.data.length) {
@@ -42,7 +42,7 @@ neoxr.create(async (m, {
       CariResep.data.forEach((resep, index) => {
         replyText += `${index + 1}. ${resep.judul}\n`;
       });
-      replyText += `\nSilakan balas dengan angka untuk memilih resep yang ingin dilihat detailnya.`;
+      replyText += `\nSilakan balas dengan mengutip pesan dan memasukkan angka untuk memilih resep yang ingin dilihat detailnya.`;
       
       client.reply(m.chat, replyText, m);
       
