@@ -10,9 +10,15 @@ neoxr.create(async (m, {
   try {
     const CariResep = await ds.ResepSearch(text);
     if (!text) return client.reply(m.chat, Func.example(prefix, command, 'Bakwan'), m);
+    
+    let replyText = `Berikut adalah hasil pencarian resep untuk '${text}':\n\n`;
     CariResep.data.forEach((resep, index) => {
-      client.reply(m.chat, `${index + 1}. ${resep.judul}`, m);
+      replyText += `${index + 1}. ${resep.judul}\n`;
     });
+    replyText += `\nTotal resep yang ditemukan: ${CariResep.data.length}`;
+    
+    client.reply(m.chat, replyText, m);
+    
     if (isNaN(text) || text < 1 || text > CariResep.data.length) {
       client.reply(m.chat, 'Pilihan tidak valid.', m);
       return;
