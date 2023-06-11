@@ -105,44 +105,45 @@ neoxr.create(async (m, {
             }, 180000)
          ]
       }  else if (style == 3) {
-         let cmd = plugins.filter(v => v.usage && v.category && v.premium && v.limit)
-         let category = []
+         let cmd = plugins.filter(v => v.premium && v.limit && v.usage && v.category);
+         let category = [];
          for (let obj of cmd) {
-            if (Object.keys(category).includes(obj.category)) category[obj.category].push(obj)
+            if (Object.keys(category).includes(obj.category)) category[obj.category].push(obj);
             else {
-               category[obj.category] = []
-               category[obj.category].push(obj)
+               category[obj.category] = [];
+               category[obj.category].push(obj);
             }
          }
-         const keys = Object.keys(category).sort()
-         let print = 'Ⓟ : Fitur untuk premium.\n'
-         print += 'Ⓛ : Fitur menggunakan limit.'
-         print += '\n' + String.fromCharCode(8206).repeat(4001)
+         const keys = Object.keys(category).sort();
+         let print = 'Ⓟ : Fitur untuk premium.\n';
+         print += 'Ⓛ : Fitur menggunakan limit.';
+         print += '\n' + String.fromCharCode(8206).repeat(4001);
          for (let k of keys) {
-            print += '\n\n么  *' + k.toUpperCase().split('').map(v => v).join(' ') + '*\n\n'
-            let cmd = plugins.filter(v => v.usage && v.category && v.premium && v.limit == k.toLowerCase())
-            if (cmd.length == 0) return
-            let commands = []
+            print += '\n\n么  *' + k.toUpperCase().split('').map(v => v).join(' ') + '*\n\n';
+            let cmd = plugins.filter(v => v.premium && v.limit && v.usage && v.category == k.toLowerCase());
+            if (cmd.length == 0) return;
+            let commands = [];
             cmd.map(v => {
-               switch (v.usage.constructor.name) {
-                  case 'Array':
+               switch (typeof v.usage) {
+                  case 'object':
                      v.usage.map(x => commands.push({
                         usage: x,
                         use: v.use ? Func.texted('bold', v.use) : '',
                         premium: v.premium ? Func.texted('bold', 'Ⓟ') : '',
                         limit: v.limit ? Func.texted('bold', 'Ⓛ') : ''
-                     }))
-                     break
-                  case 'String':
+                     }));
+                     break;
+                  case 'string':
                      commands.push({
                         usage: v.usage,
                         use: v.use ? Func.texted('bold', v.use) : '',
                         premium: v.premium ? Func.texted('bold', 'Ⓟ') : '',
                         limit: v.limit ? Func.texted('bold', 'Ⓛ') : ''
-                     })
+                     });
+                     break;
                }
-            })
-            print += commands.sort((a, b) => a.usage.localeCompare(b.usage)).map(v => `	◦  ${prefix + v.usage} ${v.use} ${v.premium} ${v.limit}`).join('\n')
+            });
+            print += commands.sort((a, b) => a.usage.localeCompare(b.usage)).map(v => `  ◦  ${prefix + v.usage} ${v.use} ${v.premium} ${v.limit}`).join('\n');
          }
          client.menu[id] = [
             await client.sendMessageModify(m.chat, print + '\n\n' + global.footer, m, {
@@ -151,9 +152,9 @@ neoxr.create(async (m, {
                url: global.db.setting.link
             }),
             setTimeout(() => {
-               delete client.menu[id]
+               delete client.menu[id];
             }, 180000)
-         ]
+         ];
       } else if (style == 4) {
          let cmd = plugins.filter(v => v.usage && v.category)
          let category = []
