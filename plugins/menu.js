@@ -104,60 +104,56 @@ neoxr.create(async (m, {
                delete client.menu[id]
             }, 180000)
          ]
-      } else if (style == 3) {
-         if (text) {
-            let cmd = plugins.filter(v => v.usage && v.category == text.toLowerCase())
-            if (cmd.length == 0) return client.reply(m.chat, Func.texted('bold', `🚩 Category not available.`), m)
+      }  else if (style == 3) {
+         let cmd = plugins.filter(v => v.usage && v.category && v.premium && v.limit)
+         let category = []
+         for (let obj of cmd) {
+            if (Object.keys(category).includes(obj.category)) category[obj.category].push(obj)
+            else {
+               category[obj.category] = []
+               category[obj.category].push(obj)
+            }
+         }
+         const keys = Object.keys(category).sort()
+         let print = 'Ⓟ : Fitur untuk premium.\n'
+         print += 'Ⓛ : Fitur menggunakan limit.'
+         print += '\n' + String.fromCharCode(8206).repeat(4001)
+         for (let k of keys) {
+            print += '\n\n么  *' + k.toUpperCase().split('').map(v => v).join(' ') + '*\n\n'
+            let cmd = plugins.filter(v => v.usage && v.category && v.premium && v.limit == k.toLowerCase())
+            if (cmd.length == 0) return
             let commands = []
             cmd.map(v => {
                switch (v.usage.constructor.name) {
                   case 'Array':
                      v.usage.map(x => commands.push({
                         usage: x,
-                        use: v.use ? Func.texted('bold', v.use) : ''
+                        use: v.use ? Func.texted('bold', v.use) : '',
+                        premium: v.premium ? Func.texted('bold', 'Ⓟ') : '',
+                        limit: v.limit ? Func.texted('bold', 'Ⓛ') : ''
                      }))
                      break
                   case 'String':
                      commands.push({
                         usage: v.usage,
-                        use: v.use ? Func.texted('bold', v.use) : ''
+                        use: v.use ? Func.texted('bold', v.use) : '',
+                        premium: v.premium ? Func.texted('bold', 'Ⓟ') : '',
+                        limit: v.limit ? Func.texted('bold', 'Ⓛ') : ''
                      })
                }
             })
-            const print = commands.sort((a, b) => a.usage.localeCompare(b.usage)).map((v, i) => {
-               if (i == 0) {
-                  return `┌  ◦  ${prefix + v.usage} ${v.use}`
-               } else if (i == commands.sort((a, b) => a.usage.localeCompare(b.usage)).length - 1) {
-                  return `└  ◦  ${prefix + v.usage} ${v.use}`
-               } else {
-                  return `│  ◦  ${prefix + v.usage} ${v.use}`
-               }
-            }).join('\n')
-            return m.reply(Func.Styles(print, 1))
-         } else {
-            let cmd = plugins.filter(v => v.usage && v.category)
-            let category = []
-            for (let obj of cmd) {
-               if (!obj.category) continue
-               if (Object.keys(category).includes(obj.category)) category[obj.category].push(obj)
-               else {
-                  category[obj.category] = []
-                  category[obj.category].push(obj)
-               }
-            }
-            let rows = []
-            const keys = Object.keys(category).sort()
-            for (let k of keys) {
-               rows.push({
-                  title: k.toUpperCase(),
-                  rowId: `${prefix}menutype ${k}`,
-                  description: ``
-               })
-            }
-            client.sendList(m.chat, '', Func.Styles(message, 1), global.botname, 'Tap!', [{
-               rows
-            }], m)
+            print += commands.sort((a, b) => a.usage.localeCompare(b.usage)).map(v => `	◦  ${prefix + v.usage} ${v.use} ${v.premium} ${v.limit}`).join('\n')
          }
+         client.menu[id] = [
+            await client.sendMessageModify(m.chat, print + '\n\n' + global.footer, m, {
+               ads: false,
+               largeThumb: true,
+               url: global.db.setting.link
+            }),
+            setTimeout(() => {
+               delete client.menu[id]
+            }, 180000)
+         ]
       } else if (style == 4) {
          let cmd = plugins.filter(v => v.usage && v.category)
          let category = []
@@ -203,56 +199,6 @@ neoxr.create(async (m, {
          }
          client.menu[id] = [
             await client.sendMessageModify(m.chat, Func.Styles(print, 1) + '\n\n' + global.footer, m, {
-               ads: false,
-               largeThumb: true,
-               url: global.db.setting.link
-            }),
-            setTimeout(() => {
-               delete client.menu[id]
-            }, 180000)
-         ]
-      } else if (style == 5) {
-         let cmd = plugins.filter(v => v.usage && v.category && v.premium && v.limit)
-         let category = []
-         for (let obj of cmd) {
-            if (Object.keys(category).includes(obj.category)) category[obj.category].push(obj)
-            else {
-               category[obj.category] = []
-               category[obj.category].push(obj)
-            }
-         }
-         const keys = Object.keys(category).sort()
-         let print = 'Ⓟ : Fitur untuk premium.\n'
-         print += 'Ⓛ : Fitur menggunakan limit.'
-         print += '\n' + String.fromCharCode(8206).repeat(4001)
-         for (let k of keys) {
-            print += '\n\n么  *' + k.toUpperCase().split('').map(v => v).join(' ') + '*\n\n'
-            let cmd = plugins.filter(v => v.usage && v.category && v.premium && v.limit == k.toLowerCase())
-            if (cmd.length == 0) return
-            let commands = []
-            cmd.map(v => {
-               switch (v.usage.constructor.name) {
-                  case 'Array':
-                     v.usage.map(x => commands.push({
-                        usage: x,
-                        use: v.use ? Func.texted('bold', v.use) : '',
-                        premium: v.premium ? Func.texted('bold', 'Ⓟ') : '',
-                        limit: v.limit ? Func.texted('bold', 'Ⓛ') : ''
-                     }))
-                     break
-                  case 'String':
-                     commands.push({
-                        usage: v.usage,
-                        use: v.use ? Func.texted('bold', v.use) : '',
-                        premium: v.premium ? Func.texted('bold', 'Ⓟ') : '',
-                        limit: v.limit ? Func.texted('bold', 'Ⓛ') : ''
-                     })
-               }
-            })
-            print += commands.sort((a, b) => a.usage.localeCompare(b.usage)).map(v => `	◦  ${prefix + v.usage} ${v.use} ${v.premium} ${v.limit}`).join('\n')
-         }
-         client.menu[id] = [
-            await client.sendMessageModify(m.chat, print + '\n\n' + global.footer, m, {
                ads: false,
                largeThumb: true,
                url: global.db.setting.link
