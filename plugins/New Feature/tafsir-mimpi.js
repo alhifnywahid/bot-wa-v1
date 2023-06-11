@@ -29,7 +29,7 @@ neoxr.create(async (m, {
   }
 }, {
   usage: ['tafsirmimpi'],
-  use: MediaQueryList,
+  use: 'query',
   category: 'a new feature',
   premium: true,
   limit: 1,
