@@ -223,8 +223,8 @@ neoxr.create(async (m, {
          }
          const keys = Object.keys(category).sort();
          let print = message;
-         print += '\n\n*𝓟 : Fitur untuk premium.*\n';
-         print += '*𝓛 : Fitur menggunakan limit.*';
+         print += '\n\n*Ⓟ : Fitur untuk premium.*\n';
+         print += '*Ⓛ : Fitur menggunakan limit.*';
          print += '\n' + String.fromCharCode(8206).repeat(4001);
          for (let k of keys) {
             print += '\n\n么  *' + k.toUpperCase().split('').map(v => v).join(' ') + '*\n\n';
@@ -237,16 +237,16 @@ neoxr.create(async (m, {
                      v.usage.map(x => commands.push({
                         usage: x,
                         use: v.use ? Func.texted('bold', v.use) : '',
-                        premium: v.premium ? Func.texted('bold', '𝓟') : '',
-                        limit: v.limit ? Func.texted('bold', '𝓛') : ''
+                        premium: v.premium ? Func.texted('bold', 'Ⓟ') : '',
+                        limit: v.limit ? Func.texted('bold', 'Ⓛ') : ''
                      }));
                      break;
                   case 'string':
                      commands.push({
                         usage: v.usage,
                         use: v.use ? Func.texted('bold', v.use) : '',
-                        premium: v.premium ? Func.texted('bold', '𝓟') : '',
-                        limit: v.limit ? Func.texted('bold', '𝓛') : ''
+                        premium: v.premium ? Func.texted('bold', 'Ⓟ') : '',
+                        limit: v.limit ? Func.texted('bold', 'Ⓛ') : ''
                      });
                      break;
                }
