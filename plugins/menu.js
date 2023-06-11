@@ -105,7 +105,7 @@ neoxr.create(async (m, {
             }, 180000)
          ]
       }  else if (style == 3) {
-         let cmd = plugins.filter(v => v.premium && v.limit && v.usage && v.category);
+         let cmd = plugins.filter(v => v.usage && v.category);
          let category = [];
          for (let obj of cmd) {
             if (Object.keys(category).includes(obj.category)) category[obj.category].push(obj);
@@ -120,7 +120,7 @@ neoxr.create(async (m, {
          print += '\n' + String.fromCharCode(8206).repeat(4001);
          for (let k of keys) {
             print += '\n\n么  *' + k.toUpperCase().split('').map(v => v).join(' ') + '*\n\n';
-            let cmd = plugins.filter(v => v.premium && v.limit && v.usage && v.category == k.toLowerCase());
+            let cmd = plugins.filter(v => v.usage && v.category == k.toLowerCase());
             if (cmd.length == 0) return;
             let commands = [];
             cmd.map(v => {
