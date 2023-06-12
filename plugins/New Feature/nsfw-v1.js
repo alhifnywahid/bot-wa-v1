@@ -14,19 +14,19 @@ neoxr.create(async (m, {
       for (let i = 0; i < 3; i++){
         client.sendFile(m.chat, await akaneko.neko(), '', jo, m)
       }
-    } else if (command == 'lewdNeko'){
+    } else if (command == 'lewdneko'){
       for (let i = 0; i < 3; i++){
         client.sendFile(m.chat, await akaneko.lewdNeko(), '', jo, m)
       }
-    } else if (command == 'lewdBomb'){
+    } else if (command == 'lewdbomb'){
       for (let i = 0; i < 3; i++){
         client.sendFile(m.chat, await akaneko.lewdBomb(), '', jo, m)
       }
-    } else if (command == 'wallpapersv1'){
+    } else if (command == 'wall1'){
       for (let i = 0; i < 3; i++){
         client.sendFile(m.chat, await akaneko.wallpapers(), '', jo, m)
       }
-    } else if (command == 'mobileWallpapersv1'){
+    } else if (command == 'mowall1'){
       for (let i = 0; i < 3; i++){
         client.sendFile(m.chat, await akaneko.mobileWallpapers(), '', jo, m)
       }
@@ -50,7 +50,7 @@ neoxr.create(async (m, {
       for (let i = 0; i < 3; i++){
         client.sendFile(m.chat, await akaneko.nsfw.femdom(), '', jo, m)
       }
-    } else if (command == 'hentaiv2'){
+    } else if (command == 'hentai2'){
       for (let i = 0; i < 3; i++){
         client.sendFile(m.chat, await akaneko.nsfw.hentai(), '', jo, m)
       }
@@ -70,11 +70,11 @@ neoxr.create(async (m, {
       for (let i = 0; i < 3; i++){
         client.sendFile(m.chat, await akaneko.nsfw.panties(), '', jo, m)
       }
-    } else if (command == 'wallpapersv2'){
+    } else if (command == 'wall2'){
       for (let i = 0; i < 3; i++){
         client.sendFile(m.chat, await akaneko.nsfw.wallpapers(), '', jo, m)
       }
-    } else if (command == 'mobileWallpapers2'){
+    } else if (command == 'mowall2'){
       for (let i = 0; i < 3; i++){
         client.sendFile(m.chat, await akaneko.nsfw.mobileWallpapers(), '', jo, m)
       }
@@ -106,7 +106,7 @@ neoxr.create(async (m, {
       for (let i = 0; i < 3; i++){
         client.sendFile(m.chat, await akaneko.nsfw.pussy(), '', jo, m)
       }
-    } else if (command == 'uglyBastard'){
+    } else if (command == 'ugly'){
       for (let i = 0; i < 3; i++){
         client.sendFile(m.chat, await akaneko.nsfw.uglyBastard(), '', jo, m)
       }
@@ -150,7 +150,7 @@ neoxr.create(async (m, {
       for (let i = 0; i < 3; i++){
         client.sendFile(m.chat, await akaneko.nsfw.yuri(), '', jo, m)
       }
-    } else if (command == 'zettaiRyouiki'){
+    } else if (command == 'zettai'){
       for (let i = 0; i < 3; i++){
         client.sendFile(m.chat, await akaneko.nsfw.zettaiRyouiki(), '', jo, m)
       }
@@ -163,7 +163,7 @@ neoxr.create(async (m, {
      client.reply(m.chat, Func.jsonFormat(e), m)
   }
 }, {
-  usage: ['neko', 'lewdNeko', 'lewdBomb', 'wallpapersv1', 'mobileWallpapersv1', 'ass', 'bdsm', 'cum', 'doujin', 'femdom', 'hentaiv2', 'maid', 'maids', 'orgy', 'panties', 'wallpapersv2', 'mobileWallpapers2', 'cuckold', 'netorare', 'gifs', 'gif', 'blowjob', 'feet', 'pussy', 'uglyBastard', 'uniform', 'gangbang', 'foxgirl', 'cumslut', 'glasses', 'thighs2', 'tentacles', 'masturbation', 'school', 'yuri', 'zettaiRyouiki', 'succubus'],
+  usage: ['neko', 'lewdneko', 'lewdbomb', 'wall1', 'mowall1', 'ass', 'bdsm', 'cum', 'doujin', 'femdom', 'hentai2', 'maid', 'maids', 'orgy', 'panties', 'wall2', 'mowall2', 'cuckold', 'netorare', 'gifs', 'gif', 'blowjob', 'feet', 'pussy', 'ugly', 'uniform', 'gangbang', 'foxgirl', 'cumslut', 'glasses', 'thighs2', 'tentacles', 'masturbation', 'school', 'yuri', 'zettai', 'succubus'],
   category: 'z - nsfw',
   premium: true,
   private: true,
