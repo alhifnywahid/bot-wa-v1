@@ -32,6 +32,8 @@ neoxr.create(
     usage: ["kitsune", "hentai", "thighs", "hanal", "neko"],
     category: "a new feature",
     premium: true,
+    private: true,
+    owner: false,
     limit: 50,
   },
   __filename
