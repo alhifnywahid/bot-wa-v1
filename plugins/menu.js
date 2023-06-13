@@ -38,13 +38,13 @@ neoxr.create(async (m, {
                      break;
                }
             });
-            const print = commands.sort((a, b) => a.usage.localeCompare(b.usage)).map(v => `  ◦  ${prefix + v.usage} ${v.use}`).join('\n')
+            const print = commands.sort((a, b) => a.usage.localeCompare(b.usage)).map(v => `  ◦  ${prefix + v.usage} ${v.use} ${v.premium} ${v.limit}`).join('\n')
             let notescuy = '*➠ Ⓟ : Fitur untuk premium.*\n';
             notescuy += '*➠ Ⓛ : Fitur menggunakan limit.*';
             notescuy += '\n' + String.fromCharCode(8206).repeat(4001);
             const menuTitle = Func.Styles(Func.texted('bold', '么  MENU ' + text.toUpperCase()))
             const footer = Func.Styles(global.footer)
-            const reply = menuTitle + '\n\n' + print + '\n\n' + footer
+            const reply = menuTitle + '\n\n' + notescuy + '\n\n' + print + '\n\n' + footer
             return m.reply(reply)
          } else {
             let cmd = plugins.filter(v => v.usage && v.category)
