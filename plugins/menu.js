@@ -19,21 +19,29 @@ neoxr.create(async (m, {
             if (cmd.length == 0) return client.reply(m.chat, Func.texted('bold', `🚩 Category not available.`), m)
             let commands = []
             cmd.map(v => {
-               switch (v.usage.constructor.name) {
-                  case 'Array':
+               switch (typeof v.usage) {
+                  case 'object':
                      v.usage.map(x => commands.push({
                         usage: x,
-                        use: v.use ? Func.texted('bold', v.use) : ''
-                     }))
-                     break
-                  case 'String':
+                        use: v.use ? Func.texted('bold', v.use) : '',
+                        premium: v.premium ? Func.texted('bold', 'Ⓟ') : '',
+                        limit: v.limit ? Func.texted('bold', 'Ⓛ') : ''
+                     }));
+                     break;
+                  case 'string':
                      commands.push({
                         usage: v.usage,
-                        use: v.use ? Func.texted('bold', v.use) : ''
-                     })
+                        use: v.use ? Func.texted('bold', v.use) : '',
+                        premium: v.premium ? Func.texted('bold', 'Ⓟ') : '',
+                        limit: v.limit ? Func.texted('bold', 'Ⓛ') : ''
+                     });
+                     break;
                }
-            })
+            });
             const print = commands.sort((a, b) => a.usage.localeCompare(b.usage)).map(v => `  ◦  ${prefix + v.usage} ${v.use}`).join('\n')
+            let notescuy = '*➠ Ⓟ : Fitur untuk premium.*\n';
+            notescuy += '*➠ Ⓛ : Fitur menggunakan limit.*';
+            notescuy += '\n' + String.fromCharCode(8206).repeat(4001);
             const menuTitle = Func.Styles(Func.texted('bold', '么  MENU ' + text.toUpperCase()))
             const footer = Func.Styles(global.footer)
             const reply = menuTitle + '\n\n' + print + '\n\n' + footer
