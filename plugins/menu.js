@@ -49,10 +49,15 @@ neoxr.create(async (m, {
             let rows = []
             const keys = Object.keys(category).sort()
             for (let k of keys) {
-               rows.push(k.toUpperCase())
+               rows.push(`➠ MENU ${k.toUpperCase()}`)
             }
-            let reply = rows.join('\n')
-            client.reply(m.chat, reply, m)
+            let reply = `*么  MENU - CATEGORIES*\n\n\n${rows.join('\n')}\n\n${global.footer}`
+            //client.reply(m.chat, reply, m)
+            client.sendMessageModify(m.chat, Func.Styles(reply, 1) + '\n\n' + global.footer, m, {
+               ads: false,
+               largeThumb: true,
+               url: global.db.setting.link
+            })
          }
       } else if (style == 2) {
          let cmd = plugins.filter(v => v.usage && v.category)
