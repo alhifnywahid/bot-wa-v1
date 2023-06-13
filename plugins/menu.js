@@ -34,8 +34,8 @@ neoxr.create(async (m, {
                }
             })
             const print = commands.sort((a, b) => a.usage.localeCompare(b.usage)).map(v => `  ◦  ${prefix + v.usage} ${v.use}`).join('\n')
-            const menuTitle = Func.Styles(Func.texted('bold', 'MENU' + text.toUpperCase()))
-            const footer = Func.Styles(Func.texted('bold', global.footer))
+            const menuTitle = Func.Styles(Func.texted('bold', '么  MENU ' + text.toUpperCase()))
+            const footer = Func.Styles(global.footer)
             const reply = menuTitle + '\n\n' + print + '\n\n' + footer
             return m.reply(reply)
          } else {
@@ -52,11 +52,11 @@ neoxr.create(async (m, {
             let rows = []
             const keys = Object.keys(category).sort()
             for (let k of keys) {
-               rows.push(`➠ MENU ${k.toUpperCase()}`)
+               rows.push(`  ➠ MENU ${k.toUpperCase()}`)
             }
             let reply = Func.Styles(Func.texted('bold', '么  MENU - CATEGORIES')) + '\n\n'
             reply += rows.join('\n') + '\n\n'
-            reply += Func.Styles(Func.texted('bold', global.footer))
+            reply += Func.Styles(global.footer)
             client.sendMessageModify(m.chat, reply, m, {
                ads: false,
                largeThumb: true,
