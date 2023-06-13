@@ -40,7 +40,7 @@ neoxr.create(
   },
   {
     usage: ["kitsune", "hentai", "thighs", "hanal", "neko"],
-    category: "a new feature",
+    category: "z - nsfw",
     premium: true,
     limit: 50,
   },
