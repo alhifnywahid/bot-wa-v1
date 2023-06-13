@@ -15,11 +15,10 @@ neoxr.create(async (m, {
       const style = global.db.setting.menuStyle
       if (style == 1) {
          if (text) {
-            let cmd = Object.entries(plugins).filter(([_, v]) => v.usage && v.category == text.toLowerCase())
-            let usage = Object.keys(Object.fromEntries(cmd))
-            if (usage.length == 0) return client.reply(m.chat, Func.texted('bold', `🚩 Category not available.`), m)
+            let cmd = plugins.filter(v => v.usage && v.category == text.toLowerCase())
+            if (cmd.length == 0) return client.reply(m.chat, Func.texted('bold', `🚩 Category not available.`), m)
             let commands = []
-            cmd.map(([_, v]) => {
+            cmd.map(v => {
                switch (v.usage.constructor.name) {
                   case 'Array':
                      v.usage.map(x => commands.push({
@@ -35,7 +34,7 @@ neoxr.create(async (m, {
                }
             })
             const print = commands.sort((a, b) => a.usage.localeCompare(b.usage)).map(v => `◦  ${prefix + v.usage} ${v.use}`).join('\n')
-            return client.reply(Func.Styles(print))
+            return m.reply(Func.Styles(print))
          } else {
             let cmd = plugins.filter(v => v.usage && v.category)
             let category = []
