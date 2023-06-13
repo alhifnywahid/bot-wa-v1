@@ -49,15 +49,10 @@ neoxr.create(async (m, {
             let rows = []
             const keys = Object.keys(category).sort()
             for (let k of keys) {
-               rows.push({
-                  title: k.toUpperCase(),
-                  rowId: `${prefix}menutype ${k}`,
-                  description: ``
-               })
+               rows.push(k.toUpperCase())
             }
-            client.sendList(m.chat, '', message, global.botname, 'Tap!', [{
-               rows
-            }], m)
+            let reply = rows.join('\n')
+            client.reply(m.chat, reply, m)
          }
       } else if (style == 2) {
          let cmd = plugins.filter(v => v.usage && v.category)
