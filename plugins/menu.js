@@ -34,7 +34,10 @@ neoxr.create(async (m, {
                }
             })
             const print = commands.sort((a, b) => a.usage.localeCompare(b.usage)).map(v => `◦  ${prefix + v.usage} ${v.use}`).join('\n')
-            return m.reply(Func.Styles(print))
+            const menuTitle = `*么  MENU ${text.toUpperCase()}*\n\n`
+            const footer = `\n\nSimple WhatsApp Bot by Goprett`
+            const reply = menuTitle + print + footer
+            return m.reply(Func.Styles(reply))
          } else {
             let cmd = plugins.filter(v => v.usage && v.category)
             let category = []
@@ -51,9 +54,9 @@ neoxr.create(async (m, {
             for (let k of keys) {
                rows.push(`➠ MENU ${k.toUpperCase()}`)
             }
-            let reply = `*么  MENU - CATEGORIES*\n\n\n${rows.join('\n')}\n\n${global.footer}`
+            let reply = `*么  MENU - CATEGORIES*\n\n${rows.join('\n')}\n\n${global.footer}`
             //client.reply(m.chat, reply, m)
-            client.sendMessageModify(m.chat, Func.Styles(reply, 1) + '\n\n' + global.footer, m, {
+            client.sendMessageModify(m.chat, Func.Styles(reply, 1), m, {
                ads: false,
                largeThumb: true,
                url: global.db.setting.link
