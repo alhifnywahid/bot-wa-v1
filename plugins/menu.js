@@ -34,7 +34,7 @@ neoxr.create(async (m, {
                      })
                }
             })
-            const print = commands.sort((a, b) => a.usage.localeCompare(b.usage)).map(v => `◦  ${isPrefix + v.usage} ${v.use}`).join('\n')
+            const print = commands.sort((a, b) => a.usage.localeCompare(b.usage)).map(v => `◦  ${prefix + v.usage} ${v.use}`).join('\n')
             return client.reply(Func.Styles(print))
          } else {
             let cmd = plugins.filter(v => v.usage && v.category)
