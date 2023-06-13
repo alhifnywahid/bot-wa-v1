@@ -15,34 +15,31 @@ neoxr.create(async (m, {
       const style = global.db.setting.menuStyle
       if (style == 1) {
          if (text) {
-            let cmd = Object.entries(plugins).filter(([_, v]) => v.run.usage && v.run.category == text.toLowerCase())
+            let cmd = Object.entries(plugins).filter(([_, v]) => v.usage && v.category == text.toLowerCase())
             let usage = Object.keys(Object.fromEntries(cmd))
             if (usage.length == 0) return client.reply(m.chat, Func.texted('bold', `🚩 Category not available.`), m)
             let commands = []
             cmd.map(([_, v]) => {
-               switch (v.run.usage.constructor.name) {
+               switch (v.usage.constructor.name) {
                   case 'Array':
-                     v.run.usage.map(x => commands.push({
+                     v.usage.map(x => commands.push({
                         usage: x,
-                        use: v.run.use ? Func.texted('bold', v.run.use) : ''
+                        use: v.use ? Func.texted('bold', v.use) : ''
                      }))
                      break
                   case 'String':
                      commands.push({
-                        usage: v.run.usage,
-                        use: v.run.use ? Func.texted('bold', v.run.use) : ''
+                        usage: v.usage,
+                        use: v.use ? Func.texted('bold', v.use) : ''
                      })
                }
             })
             const print = commands.sort((a, b) => a.usage.localeCompare(b.usage)).map(v => `◦  ${isPrefix + v.usage} ${v.use}`).join('\n')
-            return m.reply(print)
+            return client.reply(Func.Styles(print))
          } else {
-            let filter = Object.entries(plugins).filter(([_, obj]) => obj.run.usage)
-            let cmd = Object.fromEntries(filter)
+            let cmd = plugins.filter(v => v.usage && v.category)
             let category = []
-            for (let name in cmd) {
-               let obj = cmd[name].run
-               if (!cmd) continue
+            for (let obj of cmd) {
                if (!obj.category) continue
                if (Object.keys(category).includes(obj.category)) category[obj.category].push(obj)
                else {
@@ -55,7 +52,7 @@ neoxr.create(async (m, {
             for (let k of keys) {
                rows.push({
                   title: k.toUpperCase(),
-                  rowId: `${isPrefix}menutype ${k}`,
+                  rowId: `${prefix}menutype ${k}`,
                   description: ``
                })
             }
