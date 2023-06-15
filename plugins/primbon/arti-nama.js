@@ -13,8 +13,8 @@ neoxr.create(async (m, {
     client.sendReact(m.chat, '🕒', m.key)
     primbon.arti_nama(text).then((res) => {
       let output = '*么  A R T I - N A M A*\n\n'
-      output += '*Nama* : ' + res.message.nama + '\n'
-      output += '*Arti* : ' + res.message.arti + '\n\n'
+      output += '*◦  Nama* : ' + res.message.nama + '\n'
+      output += '*◦  Arti* : ' + res.message.arti + '\n\n'
       output += global.footer
       client.reply(m.chat, output, m)
     });
