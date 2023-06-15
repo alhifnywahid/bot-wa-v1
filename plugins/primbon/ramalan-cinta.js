@@ -10,9 +10,10 @@ neoxr.create(async (m, {
   try {
     const primbon = new Primbon();
     let keterangan = '*么  RAMALAN CINTA*\n\n'
-    keterangan += '*➠ Keterangan\n'
+    keterangan += '*➠ Keterangan*\n'
     keterangan += '*Kecocokan cinta pasangan berdasarkan numerologi tanggal lahir.\n\n'
-    keterangan += '*➠ Penggunaan\n'
+    keterangan += '*➠ Penggunaan*\n'
+    keterangan += Func.example(prefix, command, 'nama, hari, bulan, tahun, nama, hari, bulan, tahun\n')
     keterangan += Func.example(prefix, command, 'hifny, 7, 7, 2000, cindy, 3, 5, 2003')
     if (!text) return client.reply(m.chat, keterangan, m)
     let [name1, hari1, bulan1, tahun1, name2, hari2, bulan2, tahun2] = text.split`,`
@@ -36,7 +37,7 @@ neoxr.create(async (m, {
   }
 }, {
   usage: ['ramalancinta'],
-  use: ['name, day, month, year, name, day, month, year'],
+  use: ['n1, h1, b1, t1, n2, h2, b2, t2'],
   category: 'primbon',
   premium: false,
   private: false,
