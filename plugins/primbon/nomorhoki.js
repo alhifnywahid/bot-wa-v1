@@ -10,9 +10,9 @@ neoxr.create(async (m, {
   try {
     const primbon = new Primbon();
     if (!text) return client.reply(m.chat, Func.example(prefix, command, '6285xxxx'), m)
+    client.sendReact(m.chat, '🕒', m.key)
     primbon.nomer_hoki(text).then((res) => {
       if (res.status == false) return client.reply(m.chat, '*ERROR! No. Handphone Tidak Valid!*', m)
-      client.sendReact(m.chat, '🕒', m.key)
       let output = '*么  N O M O R - H O K I*\n\n'
       output += '*➠ NOMOR* : ' + res.message.nomer_hp + '\n'
       output += '*➠ ANGKA SHUZI* : ' + res.message.angka_shuzi + '\n\n'
