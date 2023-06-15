@@ -9,9 +9,12 @@ neoxr.create(async (m, {
 }) => {
   try {
     const primbon = new Primbon();
-    if (!args[0 || !args[1]]) return client.reply(m.chat, Func.example(prefix, command, 'hifny cindy'), m)
+    if (!text) return client.reply(m.chat, Func.example(prefix, command, 'hifny | cindy'), m)
+    let [name1, name2] = text.split`|`
+    if (!name1) return client.reply(m.chat, '*Masukkan Nama Anda!*', m)
+    if (!name2) return client.reply(m.chat, '*Masukkan Nama Pasangan Anda!*', m)
     client.sendReact(m.chat, '🕒', m.key)
-    primbon.kecocokan_nama_pasangan(args[0], args[1]).then((res) => {
+    primbon.kecocokan_nama_pasangan(name1, name2).then((res) => {
       if (res.status == false) return client.reply(m.chat, '*Error, Mungkin Input Yang Anda Masukkan Salah!*', m)
       let output = '*么  KECOCOKAN NAMA PASANGAN*\n\n'
       output += '*➠ Nama Anda* : ' + res.message.nama_anda + '\n'
@@ -27,7 +30,7 @@ neoxr.create(async (m, {
   }
 }, {
   usage: ['kecocokannama'],
-  use: ['name name'],
+  use: ['name | name'],
   category: 'primbon',
   premium: false,
   private: false,
