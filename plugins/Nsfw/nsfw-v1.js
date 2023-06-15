@@ -8,155 +8,297 @@ neoxr.create(async (m, {
   Func
 }) => {
   try {
+    if (isNaN(text)) return client.reply(m.chat, Func.example(prefix, command, '10'))
     client.sendReact(m.chat, '🕒', m.key)
     let jo = '*DOSA TANGGUNG SENDIRI!*'
-    if (command == 'neko'){
-      for (let i = 0; i < 3; i++){
+    if (command == 'neko1'){ //===========================
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.neko(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.neko(), '', jo, m)
-      }
-    } else if (command == 'lewdneko'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'lewdneko1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.lewdNeko(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.lewdNeko(), '', jo, m)
-      }
+      } //================================================
     } else if (command == 'wall1'){
-      for (let i = 0; i < 3; i++){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.wallpapers(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.wallpapers(), '', jo, m)
-      }
+      } //================================================
     } else if (command == 'mowall1'){
-      for (let i = 0; i < 3; i++){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.mobileWallpapers(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.mobileWallpapers(), '', jo, m)
-      }
-    } else if (command == 'ass'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'ass1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.ass(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.ass(), '', jo, m)
-      }
-    } else if (command == 'bdsm'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'bdsm1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.bdsm(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.bdsm(), '', jo, m)
-      }
-    } else if (command == 'cum'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'cum1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.cum(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.cum(), '', jo, m)
-      }
-    } else if (command == 'doujin'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'doujin1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.doujin(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.doujin(), '', jo, m)
-      }
-    } else if (command == 'femdom'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'femdom1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.femdom(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.femdom(), '', jo, m)
-      }
+      } //================================================
     } else if (command == 'hentai2'){
-      for (let i = 0; i < 3; i++){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.hentai(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.hentai(), '', jo, m)
-      }
-    } else if (command == 'maid'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'maid1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.maid(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.maid(), '', jo, m)
-      }
-    } else if (command == 'orgy'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'orgy1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.orgy(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.orgy(), '', jo, m)
-      }
-    } else if (command == 'panties'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'panties1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.panties(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.panties(), '', jo, m)
-      }
+      } //================================================
     } else if (command == 'wall2'){
-      for (let i = 0; i < 3; i++){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.wallpapers(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.wallpapers(), '', jo, m)
-      }
+      } //================================================
     } else if (command == 'mowall2'){
-      for (let i = 0; i < 3; i++){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.mobileWallpapers(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.mobileWallpapers(), '', jo, m)
-      }
-    } else if (command == 'cuckold'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'cuckold1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.cuckold(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.cuckold(), '', jo, m)
-      }
-    } else if (command == 'netorare'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'netorare1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.netorare(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.netorare(), '', jo, m)
-      }
-    } else if (command == 'gifs'){
+      } //================================================
+    } else if (command == 'gifs1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+        }
+      } else{
+      } //================================================
       for (let i = 0; i < 3; i++){
         client.sendFile(m.chat, await akaneko.nsfw.gifs(), '', jo, m)
       }
-    } else if (command == 'gif'){
-      for (let i = 0; i < 3; i++){
+    } else if (command == 'gif1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.gif(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.gif(), '', jo, m)
-      }
-    } else if (command == 'blowjob'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'blowjob1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.blowjob(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.blowjob(), '', jo, m)
-      }
-    } else if (command == 'feet'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'feet1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.feet(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.feet(), '', jo, m)
-      }
-    } else if (command == 'pussy'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'pussy1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.pussy(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.pussy(), '', jo, m)
-      }
-    } else if (command == 'ugly'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'ugly1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.uglyBastard(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.uglyBastard(), '', jo, m)
-      }
-    } else if (command == 'uniform'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'uniform1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.uniform(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.uniform(), '', jo, m)
-      }
-    } else if (command == 'gangbang'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'gangbang1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.gangbang(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.gangbang(), '', jo, m)
-      }
-    } else if (command == 'foxgirl'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'foxgirl1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.foxgirl(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.foxgirl(), '', jo, m)
-      }
-    } else if (command == 'cumslut'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'cumslut1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.cumslut(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.cumslut(), '', jo, m)
-      }
-    } else if (command == 'glasses'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'glasses1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.glasses(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.glasses(), '', jo, m)
-      }
+      } //================================================
     } else if (command == 'thighs2'){
-      for (let i = 0; i < 3; i++){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.thighs(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.thighs(), '', jo, m)
-      }
-    } else if (command == 'tentacles'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'tentacles1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.tentacles(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.tentacles(), '', jo, m)
-      }
-    } else if (command == 'masturbation'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'masturbation1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.masturbation(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.masturbation(), '', jo, m)
-      }
-    } else if (command == 'school'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'school1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.school(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.school(), '', jo, m)
-      }
-    } else if (command == 'yuri'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'yuri1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.yuri(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.yuri(), '', jo, m)
-      }
-    } else if (command == 'zettai'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'zettai1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.zettaiRyouiki(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.zettaiRyouiki(), '', jo, m)
-      }
-    } else if (command == 'succubus'){
-      for (let i = 0; i < 3; i++){
+      } //================================================
+    } else if (command == 'succubus1'){
+      if (text){
+        for (let i = 0; i < text; i++){
+          client.sendFile(m.chat, await akaneko.nsfw.succubus(), '', jo, m)
+        }
+      } else{
         client.sendFile(m.chat, await akaneko.nsfw.succubus(), '', jo, m)
-      }
+      } //================================================
     }
   } catch (e) {
      client.reply(m.chat, Func.jsonFormat(e), m)
   }
 }, {
-  usage: ['neko', 'lewdneko', 'wall1', 'mowall1', 'ass', 'bdsm', 'cum', 'doujin', 'femdom', 'hentai2', 'maid', 'orgy', 'panties', 'wall2', 'mowall2', 'cuckold', 'netorare', 'gifs', 'gif', 'blowjob', 'feet', 'pussy', 'ugly', 'uniform', 'gangbang', 'foxgirl', 'cumslut', 'glasses', 'thighs2', 'tentacles', 'masturbation', 'school', 'yuri', 'zettai', 'succubus'],
-  category: 'z - nsfw',
+  usage: ['neko1', 'lewdneko1', 'wall1', 'mowall1', 'ass1', 'bdsm1', 'cum1', 'doujin1', 'femdom1', 'hentai2', 'maid1', 'orgy1', 'panties1', 'wall2', 'mowall2', 'cuckold1', 'netorare1', 'gifs1', 'gif1', 'blowjob1', 'feet1', 'pussy1', 'ugly1', 'uniform1', 'gangbang1', 'foxgirl1', 'cumslut1', 'glasses1', 'thighs2', 'tentacles1', 'masturbation1', 'school1', 'yuri1', 'zettai1', 'succubus1'],
+  category: 'nsfw',
   premium: true,
   private: true,
   owner: false,
