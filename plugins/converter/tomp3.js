@@ -62,7 +62,7 @@ neoxr.create(async (m, {
    usage: ['tomp3', 'tovn'],
    hidden: ['toaudio'],
    use: 'reply media',
-   category: 'utilities',
+   category: 'converter',
    premium: true,
    limit: true
 }, __filename)
