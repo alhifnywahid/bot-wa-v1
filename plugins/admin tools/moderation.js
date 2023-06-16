@@ -35,7 +35,7 @@ neoxr.create(async (m, {
       return client.reply(m.chat, Func.jsonFormat(e), m)
    }
 }, {
-   usage: ['antidelete', 'antiporn', 'antilink', 'antivirtex', 'game', 'left', 'filter', 'localonly', 'welcome', 'fitai'],
+   usage: ['antidelete', 'antiporn', 'antilink', 'antivirtex', 'game', 'left', 'filter', 'localonly', 'welcome', 'fitai', 'porn'],
    use: 'on / off',
    category: 'admin tools',
    group: true,
