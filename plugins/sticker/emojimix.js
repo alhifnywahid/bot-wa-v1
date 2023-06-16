@@ -24,7 +24,7 @@ neoxr.create(async (m, {
    usage: ['emojimix'],
    hidden: ['mix', 'emomix'],
    use: 'emoji + emoji',
-   category: 'converter',
+   category: 'sticker',
    premium: true,
    limit: true
 }, __filename)
