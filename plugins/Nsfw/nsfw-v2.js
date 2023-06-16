@@ -68,6 +68,10 @@ neoxr.create(
   {
     usage: ["kitsune", "hentai", "thighs", "hanal", "neko"],
     category: "nsfw",
-    premium: true,
+  	error: false,
+  	premium: true,
+  	private: false,
+  	owner: true,
+  	porn: true,
     limit: 150,
   },__filename);
