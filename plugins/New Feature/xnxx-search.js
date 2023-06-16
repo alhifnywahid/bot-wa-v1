@@ -9,7 +9,7 @@ neoxr.create(async (m, {
 }) => {
   try {
     let jo = await fg.xnxxSearch(text)
-     client.reply(m.chat, jo), m)
+     client.reply(m.chat, jo, m)
   } catch (e) {
      client.reply(m.chat, Func.jsonFormat(e), m)
   }
