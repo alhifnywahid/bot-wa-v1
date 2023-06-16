@@ -10,6 +10,7 @@ neoxr.create(async (m, {
 }) => {
   try {
     if (!text) return client.reply(m.chat, Func.example(prefix, command, '6285xxxx'), m)
+    if (isNaN(text)) return client.reply(m.chat, '*ERROR! No. Handphone Tidak Valid!*', m)
     client.sendReact(m.chat, '🕒', m.key)
     const url = 'https://primbon.com/no_hoki_bagua_shuzi.php';
     const data = new URLSearchParams();
