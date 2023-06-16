@@ -32,7 +32,7 @@ neoxr.create(async (m, {
             const result = fetchText.substring(startIndex, endIndex).trim().replace(/<|>/g, '');
             const formattedResult = result.replace(/Kamarokam/g, 'Kamarokam\n').replace(/Nuju/g, 'Nuju ').replace(/(\d{4})/g, '$1\n');
             let output = '*么  RAMALAN HARI BAIK*\n\n'
-            output += formattedResult + '\n'
+            output += formattedResult
             output += global.footer
             client.reply(m.chat, output, m)
         })
