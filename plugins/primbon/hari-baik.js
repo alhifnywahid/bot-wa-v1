@@ -31,8 +31,8 @@ neoxr.create(async (m, {
             const endIndex = fetchText.indexOf('Hitung Kembali');
             const result = fetchText.substring(startIndex, endIndex).trim().replace(/<|>/g, '');
             const formattedResult = result.replace(/Kamarokam/g, 'Kamarokam\n').replace(/Nuju/g, '\nNuju').replace(/(\d{4})/g, '$1');
-            let output = '*么  N O M O R - H O K I*\n\n'
-            output += formattedResult + '\n\n'
+            let output = '*么  RAMALAN HARI BAIK*\n\n'
+            output += formattedResult + '\n'
             output += global.footer
             client.reply(m.chat, output, m)
         })
