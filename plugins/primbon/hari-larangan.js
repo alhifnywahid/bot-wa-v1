@@ -11,6 +11,9 @@ neoxr.create(async (m, {
   try {
     if (!text) return client.reply(m.chat, Func.example(prefix, command, '9, 6, 2017'), m)
     let [hari, bulan, tahun] = text.split`,`
+    hari = parseInt(hari.trim());
+    bulan = parseInt(bulan.trim());
+    tahun = parseInt(tahun.trim());
     if (isNaN(hari) || isNaN(bulan) || isNaN(tahun)) return client.reply(m.chat, '*ERROR! hari/bulan/tahun Tidak Valid!*', m)
     if (hari > 32 && hari < 1 || bulan > 12 && bulan < 1) return client.reply(m.chat, '*ERROR! hari/bulan/tahun Tidak Valid!*', m)
     client.sendReact(m.chat, '🕒', m.key)
