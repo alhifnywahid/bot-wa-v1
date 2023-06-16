@@ -27,7 +27,7 @@ neoxr.create(async (m, {
    usage: ['facebook'],
    hidden: ['fbdl', 'fbvid', 'fb'],
    use: 'link',
-   category: 'searching',
+   category: 'download',
    error: false,
    limit: true
 }, __filename)
