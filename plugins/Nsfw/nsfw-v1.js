@@ -299,8 +299,10 @@ neoxr.create(async (m, {
 }, {
   usage: ['neko1', 'lewdneko1', 'wall1', 'mowall1', 'ass1', 'bdsm1', 'cum1', 'doujin1', 'femdom1', 'hentai2', 'maid1', 'orgy1', 'panties1', 'wall2', 'mowall2', 'cuckold1', 'netorare1', 'gifs1', 'gif1', 'blowjob1', 'feet1', 'pussy1', 'ugly1', 'uniform1', 'gangbang1', 'foxgirl1', 'cumslut1', 'glasses1', 'thighs2', 'tentacles1', 'masturbation1', 'school1', 'yuri1', 'zettai1', 'succubus1'],
   category: 'nsfw',
+  error: false,
   premium: true,
-  private: true,
-  owner: false,
+  private: false,
+  owner: true,
+  porn: true,
   limit: 150,
 }, __filename);
