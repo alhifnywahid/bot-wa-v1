@@ -139,7 +139,7 @@ neoxr.create(async (m, {
    usage: ['ytmp3', 'ytmp4'],
    hidden: ['convert', 'yt', 'yta', 'ytv'],
    use: 'link',
-   category: 'searching',
+   category: 'download',
    premium: true,
    limit: true
 }, __filename)
