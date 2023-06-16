@@ -125,6 +125,6 @@ neoxr.create(async (m, {
    usage: ['sticker', 'swm'],
    hidden: ['s', 'sk', 'sgif'],
    use: 'reply media',
-   category: 'converter',
+   category: 'sticker',
    limit: true
 }, __filename)
