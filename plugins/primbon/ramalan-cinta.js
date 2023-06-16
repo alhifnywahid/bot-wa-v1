@@ -33,7 +33,7 @@ neoxr.create(async (m, {
      client.reply(m.chat, Func.jsonFormat(e), m)
   }
 }, {
-  usage: ['ramalancinta'],
+  usage: ['raci'],
   use: ['n1,h1,b1,t1,n2,h2,b2,t2'],
   category: 'primbon',
   premium: false,
