@@ -8,9 +8,8 @@ neoxr.create(async (m, {
   Func
 }) => {
   try {
-    fg.xnxxSearch(text)
-        .then(data => {client.reply(m.chat, data, m)
-    });
+    let jo = await fg.pinterest(text)
+    console.log(jo)
   } catch (e) {
      client.reply(m.chat, Func.jsonFormat(e), m)
   }
