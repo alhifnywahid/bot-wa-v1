@@ -15,7 +15,7 @@ neoxr.create(async (m, {
     bulan = parseInt(bulan.trim());
     tahun = parseInt(tahun.trim());
     if (isNaN(hari) || isNaN(bulan) || isNaN(tahun)) return client.reply(m.chat, '*ERROR! hari/bulan/tahun Tidak Valid!*', m)
-    if (hari > 32 && hari < 1 || bulan > 12 && bulan < 1) return client.reply(m.chat, '*ERROR! hari/bulan/tahun Tidak Valid!*', m)
+    if (hari > 31 || hari < 1 || bulan > 12 || bulan < 1) return client.reply(m.chat, '*ERROR! hari/bulan/tahun Tidak Valid!*', m)
     client.sendReact(m.chat, '🕒', m.key)
     const url = 'https://primbon.com/hari_sangar_taliwangke.php';
     const data = new URLSearchParams();
