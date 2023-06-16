@@ -30,7 +30,7 @@ neoxr.create(async (m, {
             const startIndex = fetchText.indexOf('Watak Hari Menurut Kamarokam');
             const endIndex = fetchText.indexOf('Hitung Kembali');
             const result = fetchText.substring(startIndex, endIndex).trim().replace(/<|>/g, '');
-            const formattedResult = result.replace(/Kamarokam/g, 'Kamarokam\n').replace(/Nuju/g, '\nNuju').replace(/(\d{4})/g, '$1');
+            const formattedResult = result.replace(/Kamarokam/g, 'Kamarokam\n').replace(/Nuju/g, 'Nuju ').replace(/(\d{4})/g, '$1\n');
             let output = '*么  RAMALAN HARI BAIK*\n\n'
             output += formattedResult + '\n'
             output += global.footer
