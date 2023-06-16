@@ -241,12 +241,20 @@ module.exports = async (client, m) => {
                client.reply(m.chat, global.status.gameSystem, m)
                return
             }
+            if (cmd.porn && !setting.fitporn) {
+               client.reply(m.chat, global.status.fitpornSystem, m)
+               return
+            }
             if (cmd.game && Func.level(users.point)[0] >= 50) {
                client.reply(m.chat, global.status.gameLevel, m)
                return
             }
             if (cmd.game && m.isGroup && !groupSet.game) {
                client.reply(m.chat, global.status.gameInGroup, m)
+               return
+            }
+            if (cmd.porn && m.isGroup && !groupSet.porn) {
+               client.reply(m.chat, global.status.pornInGroup, m)
                return
             }
             if (cmd.fitai && m.isGroup && !groupSet.fitai) {
@@ -300,8 +308,10 @@ module.exports = async (client, m) => {
             if (event.limit && event.game && users.limitGame < 1 && body) return client.reply(m.chat, `🚩 Maaf, Limit Game telah tercapai dan akan diatur ulang pada pukul 00.00 WIB.\n\n Untuk memperoleh batas yang lebih tinggi, Anda dapat meningkatkan ke paket premium dengan mengirimkan perintah .premium`, m)
             if (event.download && (!setting.autodownload || (body && global.evaluate_chars.some(v => body.startsWith(v))))) return
             if (event.game && !setting.games) return
+            if (event.porn && !setting.fitporn) return
             if (event.game && Func.level(users.point)[0] >= 50) return
             if (event.game && m.isGroup && !groupSet.game) return
+            if (event.porn && m.isGroup && !groupSet.porn) return
             event.async(m, {
                client,
                body,
