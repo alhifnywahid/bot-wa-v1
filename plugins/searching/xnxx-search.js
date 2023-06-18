@@ -20,6 +20,7 @@ neoxr.create(async (m, {
   premium: false,
   private: false,
   owner: false,
+  porn: true,
   limit: 1,
 }, __filename);
 
