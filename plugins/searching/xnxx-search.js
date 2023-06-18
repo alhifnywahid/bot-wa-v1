@@ -14,15 +14,14 @@ neoxr.create(async (m, {
      client.reply(m.chat, Func.jsonFormat(e), m)
   }
 }, {
-  usage: ['vicsearch'],
+  usage: ['xnxxsearch'],
   use: ['query'],
-  category: 'a new feature',
+  category: 'searching',
   premium: false,
   private: false,
   owner: false,
   limit: 1,
 }, __filename);
-
 
 
 
