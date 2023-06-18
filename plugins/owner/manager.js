@@ -49,7 +49,30 @@ neoxr.create(async (m, {
          data.premium = false
          data.expired = 0
          client.reply(m.chat, Func.texted('bold', `🚩 @${jid.replace(/@.+/, '')}'s premium status has been successfully deleted.`), m)
-      } else if (command == 'ban') { // banned user
+      }  else if (command == '+superprem'){
+        let data = global.db.users.find(v => v.jid == jid)
+        if (typeof data == 'undefined') return client.reply(m.chat, Func.texted('bold', `🚩 Can't find user data.`), m)
+        if (data.premium) return client.reply(m.chat, Func.texted('bold', `🚩 @${jid.replace(/@.+/, '')} has become registered as a superpremium account.`), m)
+        const unlimitedTime = Number.MAX_SAFE_INTEGER;
+        data.limit = Infinity
+        data.limitGame = Infinity
+        data.premium = true
+        data.expired = new Date(unlimitedTime);
+        if (isNaN(data.limit) || isNaN(data.limitGame)){
+            data.limit = 'Infinity'
+            data.limitGame = 'Infinity'
+        }
+        client.reply(m.chat, Func.texted('bold', `🚩 Successfully added @${jid.replace(/@.+/, '')} to premium user.`), m)
+       } else if (command == '-superprem') {
+        let data = global.db.users.find(v => v.jid == jid)
+        if (typeof data == 'undefined') return client.reply(m.chat, Func.texted('bold', `🚩 Can't find user data.`), m)
+        if (!data.premium) return client.reply(m.chat, Func.texted('bold', `🚩 Not a premium account.`), m)
+        data.limit = global.limit
+        data.limitGame = global.limitGame
+        data.premium = false
+        data.expired = 0
+        client.reply(m.chat, Func.texted('bold', `🚩 @${jid.replace(/@.+/, '')}'s superpremium status has been successfully deleted.`), m)
+       } else if (command == 'ban') { // banned user
          let is_user = global.db.users
          let is_owner = [client.decodeJid(client.user.id).split`@` [0], global.owner, ...global.db.setting.owners].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(jid)
          if (!is_user.some(v => v.jid == jid)) return client.reply(m.chat, Func.texted('bold', `🚩 User data not found.`), m)
@@ -76,7 +99,7 @@ neoxr.create(async (m, {
       client.reply(m.chat, Func.jsonFormat(e), m)
    }
 }, {
-   usage: ['+owner', '-owner', '+prem', '-prem', 'ban', 'unban', 'block', 'unblock'],
+   usage: ['+owner', '-owner', '+prem', '-prem', '+superprem', '-superprem', 'ban', 'unban', 'block', 'unblock'],
    use: 'mention or reply',
    category: 'owner',
    owner: true
