@@ -28,7 +28,7 @@ neoxr.create(async (m, {
       console.log(e)
    }
 }, {
-   usage: ['info cuaca'],
+   usage: ['infocuaca'],
    hidden: [],
    use: 'city',
    category: 'information',
