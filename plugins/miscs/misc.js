@@ -18,7 +18,11 @@ neoxr.create(async (m, {
          name: global.owner_name,
          number: global.owner,
          about: 'Owner & Creator'
-      }], m).then(() => m.reply('*KONTAK INI KHUSUS UNTUK TRANSAKSI PEMBELIAN PREMIUM DAN UNBLOK/UNBAN, DI LUAR DARI ITU TIDAK AKAN DI RESPON.*'))
+      }], m, {
+        org: 'im_gopret',
+        website: 'https://im.gopret.com',
+        email: 'im.gopret@gmail.com'
+      }).then(() => m.reply('*KONTAK INI KHUSUS UNTUK TRANSAKSI PEMBELIAN PREMIUM DAN UNBLOK/UNBAN, DI LUAR DARI ITU TIDAK AKAN DI RESPON.*'))
       if (command == 'tourl') {
          let q = m.quoted ? m.quoted : m     
          let mime = (q.msg || q).mimetype || ''
