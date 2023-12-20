@@ -89,21 +89,6 @@ neoxr.create(async (m, {
          let json = await Api.chord(text)
          if (!json.status) return client.reply(m.chat, global.status.fail, m)
          client.reply(m.chat, json.data.chord, m)
-      } else if (command == 'lirik') {
-         if (!text) return client.reply(m.chat, Func.example(prefix, command, 'lathi'), m)
-         client.sendReact(m.chat, '🕒', m.key)
-         let json = await Api.lyric(text.trim())
-         if (!json.status) return client.reply(m.chat, Func.jsonFormat(json), m)
-         if (text.startsWith('https')) return client.reply(m.chat, json.data.lyric, m)
-         let rows = []
-         json.data.map(v => rows.push({
-            title: v.title,
-            rowId: `${prefix + command} ${v.url}`,
-            description: ``
-         }))
-         client.sendList(m.chat, '', `Showing search results for : “${text}” 🍟`, '', 'Tap!', [{
-            rows
-         }], m)
       } else if (command == 'pinterest2') {
          if (!text) return client.reply(m.chat, Func.example(prefix, command, 'cat'), m)
          client.sendReact(m.chat, '🕒', m.key)
@@ -174,7 +159,7 @@ neoxr.create(async (m, {
       client.reply(m.chat, Func.jsonFormat(e), m)
    }
 }, {
-   usage: ['chord', 'lirik', 'google', 'goimg', 'ytsearch', 'apk', 'apkmod'],
+   usage: ['chord', 'google', 'goimg', 'ytsearch', 'apk', 'apkmod'],
    hidden: ['yts', 'pinterest2', 'ytfind', 'getapk', 'getapkmod'],
    use: 'query',
    category: 'searching',
